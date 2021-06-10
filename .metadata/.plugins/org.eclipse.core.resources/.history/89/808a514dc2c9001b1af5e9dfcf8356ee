@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	ol {
+	list-style-type : lower-Latin;
+	}
+	
+	ul{
+	/* list-style-type: square; */
+	list-style-image: url('images/smile.png');
+		}
+		
+	#menu li{
+		list-style-type : none;
+		float:left;
+		margin-right:20px;
+			padding:10px;
+	}
+</style>
+</head>
+<body>
+<ol>
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+	<li>4</li>
+	<li>5</li>
+	<li>6</li>
+</ol>
+<ul>
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+	<li>4</li>
+	<li>5</li>
+	<li>6</li>
+</ul>
+<br>
+<ul id="menu">
+	<li>menu1</li>
+	<li>menu2</li>
+	<li>menu3</li>
+	<li>menu4</li>
+</ul>
+
+</body>
+</html>

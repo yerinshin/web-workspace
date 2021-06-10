@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	body {
+	font-family: selif; 
+	
+	}
+	
+</style>
+</head>
+<body>
+	글자가 변경되었습니까?
+	<div>
+		div안에서도 적용이 됩니까?
+	</div>
+</body>
+</html>

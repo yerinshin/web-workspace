@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	body {
+		/* background-color : navy; */
+		background-image : url(/Lecture-Web/css/images/dog.jpg);
+		/* background-repeat : repeat-x; */ 
+		background-repeat : repeat;
+		/* background-position: 100px 100px; */
+		/* background-size: cover; */
+	}
+	
+	div {
+	background-color : yellow;
+	border : 10px groove green;
+	background-size : 110px 90px;
+	background-image : url('images/sun.jpg');
+	background-repeat: no-repeat;
+	background-position : right bottom;
+	padding : 20px;
+	background-origin : padding-box;
+	}
+</style>
+</head>
+<body>
+	<div>
+	Hi,<br>
+	안녕하세요<br>
+	날씨가 조아요.
+	</div>
+</body>
+</html>

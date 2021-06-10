@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	ol {
+	list-style-type : lower-Latin;
+	}
+	
+	ul{
+	list-style-type: square;
+		}
+</style>
+</head>
+<ol>
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+	<li>4</li>
+	<li>5</li>
+	<li>6</li>
+</ol>
+
+<body>
+</body>
+</html>

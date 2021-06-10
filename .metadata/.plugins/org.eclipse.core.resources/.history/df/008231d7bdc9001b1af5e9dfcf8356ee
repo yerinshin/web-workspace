@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+	div{
+		width : 300px;
+		height : 200px;
+		background-color : green;	
+	}
+</style>
+</head>
+<body>
+	<div>
+		<img src="images/dog.jpg" >
+	</div>
+</body>
+</html>

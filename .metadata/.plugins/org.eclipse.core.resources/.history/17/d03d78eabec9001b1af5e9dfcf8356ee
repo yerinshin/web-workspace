@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	body {
+		/* background-color : navy; */
+		background-image : url(/Lecture-Web/css/images/cat.jpg);
+	}
+</style>
+</head>
+<body>
+
+</body>
+</html>
