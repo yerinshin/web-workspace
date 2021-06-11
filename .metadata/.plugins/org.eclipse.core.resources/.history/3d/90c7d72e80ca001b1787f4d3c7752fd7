@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	let a = 10
+	let b = 10
+	alert(`a : ${ a }, b : ${ b }`)
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+
+	table ,td{
+		
+		border-collapse : collapse;
+		border : 4px ridge lightgray;
+	}
+</style>
+
+
+</head>
+<body>
+<div class="Board">
+	<table>
+	
+	<th>
+	<td>번호</td>
+	<td>제목</td>
+	<td>글쓴이</td>
+	<td>등록일</td>
+
+	</th>
+	
+	
+	</table>
+</div>
+</body>
+</html>

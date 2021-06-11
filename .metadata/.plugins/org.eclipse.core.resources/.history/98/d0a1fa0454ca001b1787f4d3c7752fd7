@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.calculator {
+		border : 4px ridge gray;
+		width : 200px;
+		height : 30px;
+		
+	}
+</style>
+</head>
+<body>
+<div class="calculator">
+	<div class = "display">
+	<input type="text">
+	</div>
+	<div class = "num-button"></div>
+	<div clas = "cal"></div>
+</div>
+</body>
+</html>

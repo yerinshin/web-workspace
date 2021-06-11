@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#numberlist li {
+		float : left;
+		margin : 10px;
+		font-size : 16pt;
+		list-style-type : none;
+	}
+	
+	li:first-child {
+		color:green;
+	}
+	
+	li:nth-child(2n) {
+		color : orange;
+	}
+	
+	li:last-child {
+		color:blue;
+	}
+	
+	/*li태그의 float : left 가 이후에도 영향을 끼침*/
+	p {
+		clear : left; /* float left 무효화*/
+		/* clear : both; --> left , right 무효화 */
+	}
+	
+	a:link{
+		color : black;
+		text-decoration : none;
+	}
+	
+	a:visited {
+		color : black;
+	}
+	
+	a:hover {
+		background-color : pink;
+		text-decoration : underline;
+	}
+	
+	a:active {
+		color : skyblue;
+		font-weight : bold;
+	}
+	
+	p.text::first-letter {
+		font-size : 4em;
+	}
+	
+	p.text::selection {
+		background-color : yellow;
+	}
+	
+	p.text::first-line {
+		text-decoration : underline;
+	}
+	
+	/*적용안됨. 레벨(이 경우는 body)안의 첫번째 태그가 h1이여야만 함. 
+	즉, body태그 안의 first-child가 운좋게 h1이어야한다.*/
+	h1:first-child {
+		color:red;
+	}
+
+	/*얘로 해야함 -> 모든 레벨안의 첫번째 h1*/
+	h1:first-of-type {
+		color:red;
+	}
+	
+	/*레벨들안의 마지막 h2*/
+	h2:last-of-type {
+		color: blue;
+	}
+	
+	/*레벨들 안에서 h3가 하나만 있다면*/
+	h3:only-of-type {
+		background-color : pink;
+	}
+	
+	/*어떤 부모안에 자식이 하나만 있는데 운좋게 h2일때만*/
+	h2:only-child {
+		background-color : lightgray;
+	}
+	
+</style>
+</head>
+<body>
+	<ul id = "numberlist">
+		<li>ONE</li>
+		<li>TWO</li>
+		<li>THREE</li>
+		<li>FOUR</li>
+		<li>FIVE</li>
+		<li>SIX</li>
+		<li>SEVEN</li>
+		<li>EIGHT</li>
+		<li>NINE</li>
+		<li>TEN</li>
+	
+	</ul>
+	<br>
+	<p>
+		<a href = "http://www.daum.net">DAUM으로 이동</a><br>
+		<a href = "http://www.naver.com"> NAVER로 이동</a>
+	</p>
+	
+	<p class = "text">
+		ABCDEFGHIJK<br>
+		LMNOP
+	</p>
+	
+	<p class = "text">
+		abcdefghijk<br>
+		lmnop
+	</p>
+	
+	<h1>Header1</h1>
+	<h3>Header3</h3>
+	<h1>Header2</h1>
+	<h4>Header4</h4>
+	<h1>Header1</h1>
+	<h2>Header2</h2>
+	<h6>Header6</h6>
+	<div>
+		<h2>Sub2</h2>
+		<h1>Sub1</h1>
+	</div>
+</body>
+</html>

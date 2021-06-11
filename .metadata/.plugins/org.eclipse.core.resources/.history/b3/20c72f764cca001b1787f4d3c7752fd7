@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	input[type=password] {
+		background-color : lightgray;
+		}
+		
+	img{
+		width:100px;
+		height: 100px;
+		border : 2px solid gray;
+	}
+/* $ : ~로 끝나면*/
+	img[src$='jpg']{
+	border-color : lightgray;
+	}
+	
+</style>
+</head>
+<body>
+	<form>
+		아이디 : <input type="text"><br>
+		패스워드 : <input type="password"> <br>
+	</form>
+	<br>
+	<img src="images/bear.jpg">
+	<img src="images/dog.jpg">
+	<img src="./images/bear2.jpg">
+</body>
+</html>

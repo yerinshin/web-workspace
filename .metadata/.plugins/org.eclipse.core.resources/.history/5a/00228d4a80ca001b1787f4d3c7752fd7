@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	alert(`a : ${ a }, b : ${ b }`) //오류
+	let a = 10
+	let b = 10
+	alert(`a : ${ a }, b : ${ b }`) //오류x
+</script>
+</head>
+<body>
+
+</body>
+</html>

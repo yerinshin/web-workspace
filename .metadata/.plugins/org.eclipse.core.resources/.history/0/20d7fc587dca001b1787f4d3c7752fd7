@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var num = prompt("정수를 하나 입력하세요")
+	alert(typeof(num))
+</script>
+</head>
+<body>
+
+</body>
+</html>

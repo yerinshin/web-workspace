@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	body {
+	height : 500px;
+	margin-left: auto;
+	margin-right: auto;
+	}
+	
+	.cakeworld {
+	margin : 100px;
+	}
+
+	header {
+		background-color : red;
+		height : 100px;
+	}
+	aside {
+		background-color : green;
+		height : 600px;
+		width : 30%;  /*반응형웹의 기본 : px대신 %사용*/
+		float : left;
+	}
+	section {
+		background-color : pink;
+		height : 600px;
+		width : 70%;
+		float : right;
+	}
+	footer {
+		background-color : orange;
+		height : 100px;
+		clear: both;
+	}
+</style>
+</head>
+<body>
+<div class="cakeworld">
+    <header>헤더</header>
+	<aside>aside</aside>
+	<section>section</section>
+	<footer>footer</footer>
+
+</div>
+</body>
+</html>
