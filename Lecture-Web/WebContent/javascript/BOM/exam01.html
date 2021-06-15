@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	/*
+		BOM(브라우저 객체 모델)
+		- window		:	브라우저의 최상의 객체(제일 큰 네모)
+			- location	:	주소창과 관련
+			- screen	:	창 크게하고 작게만들기
+			- history	: 	앞으로가기, 뒤로가기
+			- document	:	body 밑에 쓰는 무언가
+			-navigator	:	 	
+		
+	*/
+	
+	//alert('hello')는 아래와 동일 
+	window.alert('hello')	//window객체 아래에서 실행중 
+
+	let sub = window.open("", "", "width=500, height=400")
+	if(!sub) {
+		alert("팝업 창 옵션을 확인하세요")
+	}
+	
+	sub.moveTo(100, 100)				//To : 절대적
+	
+	let pid = setInterval(function(){
+		sub.moveBy(10, 10)				//By : 상대적
+	}, 1000)
+	
+	let width = screen.width
+	let height = screen.height
+	
+	
+	setTimeout(function() {
+		clearInterval(pid)
+		sub.resizeTo(width, height)
+	}, 3000)
+</script>
+</head>
+<body>
+
+</body>
+</html>

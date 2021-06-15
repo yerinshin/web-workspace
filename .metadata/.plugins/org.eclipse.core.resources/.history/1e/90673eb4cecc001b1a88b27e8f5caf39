@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	let person = {
+			//key 값은 무조건 문자열 , 그러므로 작은따옴표 생략 가능. 대시 같은거 들어갈 땐 써줘야함
+			'name' : '홍길동',
+			'phone' : '010-1111-2222'
+	}
+	
+	console.log(person)
+	
+	alert('name : ' + person.name + ', phone : ' + person.phone)
+	alert('name : ' + person['name'])
+	
+	alert('멤버변수 name 존재여부 : ' + ('name' in person))
+	alert('멤버변수 phone 존재여부 : ' + ('phone' in person))
+	
+	person.addr = '경기도 광명시'
+	alert('멤버변수 addr 존재여부 : ' + ('addr' in person))
+	console.log(person)
+	
+</script>
+</head>
+<body>
+	
+</body>
+</html>

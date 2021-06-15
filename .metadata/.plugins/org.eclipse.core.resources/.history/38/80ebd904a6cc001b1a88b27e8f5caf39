@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var array = ['A', 23, true, undefined, 'hello', null, 12.34]
+	
+	document.write('array[0] : ' + array[0] + '<br>')
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload = function() {
+		let h1Tag = document.createElement('h1')
+		let text = document.createTextNode('hello')
+		console.log(h1Tag)
+	}
+	
+</script>
+</head>
+<body>
+	<!-- <h1>Hello</h1> -->
+	
+</body>
+</html>

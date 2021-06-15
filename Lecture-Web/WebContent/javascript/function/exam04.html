@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	
+	function returnFunction() {
+		
+		return function() {
+			alert('return function...')
+		}
+	}
+	
+//	let ret = returnFunction()
+//	ret()
+	
+	returnFunction()()	
+	
+	function test(name) {
+		var output = 'Hello ' +name + "!!!"
+	}
+	
+	
+	
+	//closer : 리턴값으로 함수를 넘기는 행위 => 함수가 끝나도 변수를 잠시 유지시키기 위해서
+	function test(name) {
+		var output = 'Hello ' +name + "!!!"
+		return function() {
+			alert(output)
+		}
+	}
+	
+//	alert(output)
+	
+	//1
+	f= test('홍길동') 	//외부함수는 끝났지만 내부의 function이 호출(실행)전이기 때문에 살아잇으므로,...? 변수 유지 가능 --> close
+ 	f()					//내부 함수가 실행될때 까지 살아있음. 내부 함수 실행됐으므로, 이 이후에 종료
+	
+ 	//2 : 1과 같은 값
+	test('홍길동')()
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	let num = 0
+	
+	
+</script>
+</head>
+<body>
+	
+	<input type="button" value="클릭" id="button" onclick="clickBtn()">
+</body>
+</html>

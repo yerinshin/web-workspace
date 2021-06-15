@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>	
+	function func01() {	
+			alert(arguments[0] + ' : ' + arguments[1] + " : " + arguments[2])
+	}
+	
+	function func02(...numbers){
+		console.log(numbers)
+		alert(numbers[0]+ ' : ' + numbers[1] + ' : ' +numbers[2])
+		alert(arguments[0] + ' : ' + arguments[1] + " : " + arguments[2])
+	}
+	
+	//인자 두개는 필수, 그 외에는 옵션 일 경우
+	function func03(a,b,...numbers) {
+		
+	}
+	
+	func01(1, 2, 3)
+	func02(1, 2, 3)
+	func02(1)
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

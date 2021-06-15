@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	
+	let books = ['백설공주', '피터팬', '콩쥐팥쥐', '신데렐라']
+	
+	for(let index =0; index < books.length; index++) {
+		document.write(books[index] + "&nbsp;&nbsp;&nbsp;")
+	}
+	
+	document.write('<br>')
+	
+	for(let i in books) {	//몇번째인지 위치 알 수 있음
+		document.write(books[i] + "&nbsp;&nbsp;&nbsp;")
+	}
+	
+	document.write('<br>')
+	
+	for(let book of books) {
+		document.write(book + "&nbsp;&nbsp;&nbsp;")
+	}
+	document.write('<br>')
+	
+	//forEach() : books배열의 요소를 하나씩 뽑아서 forEach()의 콜백 함수로 보냄
+	//꽤 많이씀!
+	books.forEach(function(element, index, array) {		//arguments에 1번째: data. 2번째: index, 3번째 : 배열 이 날아옴
+		document.write(element + "&nbsp;&nbsp;&nbsp;")
+	})			
+	
+	document.write('<br>')
+	
+	books.sort()	//유니코드 기준 정렬!
+	
+	books.forEach(function(element, index, array) {		//arguments에 1번째: data. 2번째: index, 3번째 : 배열 이 날아옴
+		document.write(element + "&nbsp;&nbsp;&nbsp;")
+	})			
+	
+	document.write('<br>')
+	
+	let nums = [12, 6, 25, 63, 4, 32, 18, 42, 55, 35]
+	document.write("nums : " + nums + '<br>')
+	
+	nums.sort()
+	document.write("sort()...nums : " + nums + '<br>')	//문자열처럼 정렬시킴
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

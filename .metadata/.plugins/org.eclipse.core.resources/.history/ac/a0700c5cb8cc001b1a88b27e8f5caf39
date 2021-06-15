@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	
+	function returnFunction() {
+		
+		return function() {
+			alert('return function...')
+		}
+	}
+	
+//	let ret = returnFunction()
+//	ret()
+	
+	returnFunction()()	
+	
+	function test(name) {
+		var output = 'Hello ' +name + "!!!"
+	}
+	
+	
+	
+	//close : 함수가 끝나도 변수를 잠시 유지시키기 위해서
+	function test(name) {
+		var output = 'Hello ' +name + "!!!"
+		return function() {
+			alert(output)
+		}
+	}
+	
+//	alert(output)
+	
+	f= test('홍길동') 	//외부함수는 끝났지만 내부의 function이 f에 저장되어 살아잇으므로,...? 변수 유지 가능 --> close
+ 	
+	test('홍길동')
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

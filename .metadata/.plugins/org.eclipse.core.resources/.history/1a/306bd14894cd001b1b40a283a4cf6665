@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	let num = [10, 20, 30, 40, 50]
+	
+	document.write('nums : ' + nums + '<br>')
+</script>
+</head>
+<body>
+
+</body>
+</html>

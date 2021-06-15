@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	let num = 0
+	
+	window.onload = function() {
+		let text = document.createTextNode(` ${num} 번 클릭`)
+		document.body.appendChild(text)
+		
+		let button = document.createElement('input')
+		button.type = 'button'
+		button.value = '클릭'
+		document.body.appendChild(button)
+		
+		button.onclink = function(){
+			
+		}
+	}
+	
+	
+	function clickBtn(){
+		
+		
+	}
+	
+</script>
+</head>
+<body>
+	
+	<!-- <input type="button" value="클릭" onclick="clickBtn()"> -->
+</body>
+</html>

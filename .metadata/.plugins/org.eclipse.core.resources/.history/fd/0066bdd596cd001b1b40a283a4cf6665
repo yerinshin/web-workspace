@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	let nums = [10, 20, 30, 40, 50]
+	
+	document.write('nums : ' + nums + '<br>')
+	
+/* 	let copyNums =[]
+	
+	for(let num of nums) {
+		copyNums.push(num + 100)
+	}
+	 */
+	 
+	 
+	 let copyNums = nums.map(function(element) {
+		// console.log(arguments)
+		return element + 100
+	 })
+	 
+	document.write('copyNums : ' + copyNums + '<br>')
+	document.write('<hr>')
+	
+	
+	nums = [5, 23, 1, 676, 34, 47, 8, 34, 12, 56]
+	
+	let evenNums = nums.filter(function(element, index, array) {
+		return element % 2 == 0 		//이 조건 만족하는 데이터의 element들만 배열로 return
+	})
+	
+	document.write('nums : ' + nums + '<br>')
+	document.write('evenNums : ' + evenNums + '<br>')
+	
+	let bool = nums.every(function(element) {	//모든 조건을 만족하는 경우 true, 하나라도 아니면 false
+		return element > 0
+	})
+	
+	document.write('양의 정수 집합 판단 : ' + bool + '<br>')
+
+	
+	bool = nums.some(function(element) {				//내가 원하는 조건을 하나라도 만족하면 true
+		return element % 2 == 0
+	})
+	
+	document.write('짝수 포함 여부 : ' + bool + '<br>')
+	
+	nums = [1, 2, 3, 4, 5]
+	let sum = 0
+	for(const data of nums) {
+		sum += data
+	}
+	
+	document.write(nums + ' 총합 : ' + sum)
+	
+	// 1,2 / 1,2,3 / 1,2,3,4 / 1,2,3,4,5/ 더해서 값이 1개가 될때까지 수행
+	nums.reduce(function(before, data) {
+		return before + data
+	})
+</script>
+</head>
+<body>
+
+</body>
+</html>

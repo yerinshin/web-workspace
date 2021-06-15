@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	let names = ['윤길동', '홍길동', '강길동', '박길동', '구길동']
+	
+	document.write(names + '<br>')
+	
+	names[4]
+</script>
+</head>
+<body>
+
+</body>
+</html>

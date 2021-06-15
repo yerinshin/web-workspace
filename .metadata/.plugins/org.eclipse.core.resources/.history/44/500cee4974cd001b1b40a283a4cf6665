@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	class Person {
+		
+	}
+	
+	let p = new Person()
+//	let p = new Person("홍길동", "010-1111-2222", "경기도 광명시")
+	console.log(p)
+	</script>
+</head>
+<body>
+
+</body>
+</html>

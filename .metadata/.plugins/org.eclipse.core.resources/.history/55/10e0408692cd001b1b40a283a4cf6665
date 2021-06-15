@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	
+	let books = ['백설공주', '피터팬', '콩쥐팥쥐', '신데렐라']
+	
+	for(let index =0; index < books.length; index++) {
+		document.write(books[index] + "&nbsp;&nbsp;&nbsp;")
+	}
+	
+	document.write('<br>')
+	
+	for(let i in books) {	//몇번째인지 위치 알 수 있음
+		document.write(books[i] + "&nbsp;&nbsp;&nbsp;")
+	}
+	
+	document.write('<br>')
+	
+	for(let book of books) {
+		document.write(book + "&nbsp;&nbsp;&nbsp;")
+	}
+	document.write('<br>')
+	
+	//forEach() : books배열의 요소를 하나씩 뽑아서 forEach()의 콜백 함수로 보냄
+	//꽤 많이씀!
+	books.forEach(function(element, index, array) {		//arguments에 1번째: data. 2번째: index, 3번째 : 배열 이 날아옴
+		document.write(element + "&nbsp;&nbsp;&nbsp;")
+	})			
+	
+	document.write('<br>')
+	
+	books.sort()
+	
+	books.forEach(function(element, index, array) {		//arguments에 1번째: data. 2번째: index, 3번째 : 배열 이 날아옴
+		document.write(element + "&nbsp;&nbsp;&nbsp;")
+	})			
+	
+	document.write('<br>')
+</script>
+</head>
+<body>
+
+</body>
+</html>

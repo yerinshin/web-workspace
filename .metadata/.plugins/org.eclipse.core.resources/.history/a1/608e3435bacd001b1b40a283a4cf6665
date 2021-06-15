@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	
+	window.onload = function() {
+		
+		let text = document.createTextNode(`${num} 번 클릭`)
+		document.body.appendChild(text)
+		
+		let button = document.createElement('input')
+		button.type = 'button'
+		button.value = '클릭'
+		document.body.appendChild(button)
+		
+		console.log(button)
+		
+		button.onclink = function(){
+			alert('h1 click...')	
+		/* 	num = num +1 */
+		}
+		
+		let btn = document.getElementById('dd')
+		button.onclick = function() {
+			let num = 0
+			num = num +1
+			let text = document.getElementById('text')
+			text.innerHTML = `${num} 번 클릭`
+		}
+		
+	}
+	
+	
+	function clickBtn(){
+		
+		
+	}
+	
+</script>
+</head>
+<body>
+	
+	<h1 id = "text">0번클릭</h1>
+	
+</body>
+</html>

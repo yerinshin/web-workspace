@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	
+	window.onload = function() {
+		let num = 0
+		
+		let button = document.createElement('input')
+		button.type = 'button'
+		button.value = '클릭'
+		document.body.appendChild(button)
+		
+		console.log(button)
+		
+		
+		let btn = document.getElementById('dd')
+		
+		button.onclick = function() {
+			
+		num++;
+		let text = document.getElementById('text')
+		text.innerHTML = `${num} 번 클릭`
+		
+		
+		}
+		
+	}
+	
+	
+	function clickBtn(){
+		
+		
+	}
+	
+</script>
+</head>
+<body>
+	
+	<h3 id = "text">0번클릭</h3>
+	
+</body>
+</html>

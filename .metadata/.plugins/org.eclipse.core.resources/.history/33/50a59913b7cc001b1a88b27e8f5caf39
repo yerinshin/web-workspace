@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	
+	function returnFunction() {
+		return function() {
+			alert('return function...')
+		}
+	}
+	
+//	let ret = returnFunction()
+//	ret()
+	returnFunction()()	
+</script>
+</head>
+<body>
+
+</body>
+</html>

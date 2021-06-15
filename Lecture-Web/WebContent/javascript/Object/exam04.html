@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	// 생성자 함수
+	function Person(name, phone, addr) {
+		this.name = name
+		this.phone = phone
+		this.addr = addr
+		this.info = function() {
+			let msg = ''
+			for(let key in this){
+				if(key != 'info')
+				msg += key + ' : ' + this[key] + '\n'
+			}
+			alert(msg)
+		}
+	}
+	
+	let person = new Person('홍길동', '010-1111-2222', '경기도 광명시') 
+	person.info();
+	console.log(person)
+	
+	let person2 = new Person() //객체 만들어짐!(undefined 로 나옴)
+	console.log(person2)
+	
+	alert(person instanceof Person)
+	
+	Person.prototype.aaa = function() {
+		alert('aaa')
+	}
+	
+	person.aaa()
+	person2.aaa()
+</script>
+</head>
+<body>
+
+</body>
+</html>
