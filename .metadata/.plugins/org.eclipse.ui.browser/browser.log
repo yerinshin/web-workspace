@@ -1,0 +1,6 @@
+
+6월 15, 2021 22:03:25.384 NEW SESSION
+6월 15, 2021 22:03:25.384 [4144:13148:0615/220325.383:ERROR:device_event_log_impl.cc(214)] [22:03:25.382] Bluetooth: bluetooth_adapter_winrt.cc:1072 Getting Default Adapter failed.
+6월 15, 2021 22:52:05.152 [2676:3372:0615/225205.152:ERROR:device_event_log_impl.cc(214)] [22:52:05.152] Bluetooth: bluetooth_adapter_winrt.cc:1072 Getting Default Adapter failed.
+6월 16, 2021 21:17:34.305 [14056:15212:0616/211734.305:ERROR:device_event_log_impl.cc(214)] [21:17:34.305] Bluetooth: bluetooth_adapter_winrt.cc:1072 Getting Default Adapter failed.
+6월 16, 2021 22:19:29.689 [14056:15212:0616/221929.689:ERROR:CONSOLE(1)] "console.assert", source: devtools://devtools/bundled/core/sdk/sdk.js (1)

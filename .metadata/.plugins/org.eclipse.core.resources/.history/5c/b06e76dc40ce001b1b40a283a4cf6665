@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="exam08.html" >
+	
+	<!-- form 태그 작성 시 input 태그에 name속성은 꼭써야함. 그래야 name = value의 형태로 값이 전달됨 -->
+		아이디	: <input type="text" name="id"><br>
+		패스워드	: <input type="password" name="pwd"><br>
+		패스워드 확인: <input type="password" name="pwdCheck"><br>
+		<input type="submit" value="전송">
+	</form>
+</body>
+</html>

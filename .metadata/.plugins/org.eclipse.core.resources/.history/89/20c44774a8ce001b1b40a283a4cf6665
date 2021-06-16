@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	 body{
+	  width : 1000px;
+	  /* background-image: url(images/worldmap.jpg); */
+	 }
+	 
+
+ 
+	 
+</style>
+<script>
+
+	function getTime(){
+	
+		
+		
+	}
+</script>
+</head>
+<body>
+<!-- <a href='https://kr.freepik.com/free-photos-vectors/vintage'>Vintage 벡터는 pikisuperstar - kr.freepik.com가 제작함</a> -->
+<div class = "map-image">
+	<div class="location">
+		<img id="newYork" src="images/star.png" onclick="getTime()">
+	
+	</div>
+
+
+
+</body>
+</html>

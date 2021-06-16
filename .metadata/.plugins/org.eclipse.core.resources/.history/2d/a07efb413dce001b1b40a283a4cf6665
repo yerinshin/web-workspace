@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+</script>
+</head>
+<body>
+	<button id="btn01">click</button>
+	<button id="btn02">click</button>
+</body>
+</html>

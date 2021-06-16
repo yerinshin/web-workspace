@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	let num = prompt("10 ~ 100 사이의 숫자를 입력하세요 : ")
+	for(i = 1; i <= num; i++) {
+		
+		let tens = i / 10				//10의 자리수
+		let multipleOfTen = false		//10의 배수인가
+		let ThreeSixNine = false
+		
+		if( (i - (tens*10)) % 3 == 0) {
+		//	document.write('짝')
+			
+		}
+		
+		
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

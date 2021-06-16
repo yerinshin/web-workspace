@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function whenSubmit() {
+		//getElementById로 다 가져오기에는 input값 개수에 따라 복잡해 질 수 있다.
+		//form 태그일 때만 name 으로 불러와 사용 가능 --> document.form태그이름.input태그이름
+	
+		let f = document.inputForm
+			
+		if(f.id.value == ""){
+			alert("아이디를 입력하세요")
+			return false
+		}
+		
+		if(f.pwd.value != f.pwdCheck.value){
+			alert("패스워드가 서로 일치하지 않습니다.")
+			return false
+		}
+		
+		return true
+	}
+</script>
+</head>
+<body>
+	<form action="exam08.html" name="inputForm" onsubmit="return whenSubmit()">
+	<!-- form 태그 작성 시 input 태그에 name속성은 꼭써야함. 그래야 name = value의 형태로 값이 전달됨 -->
+	<!-- uri ?(물음표) 뒤를  querystring(전달 값 정보)이라고 함 -->
+	
+		아이디	: <input type="text" name="id" id="id">
+		패스워드	: <input type="password" name="pwd" id="pwd"><br>
+		패스워드 확인: <input type="password" name="pwdCheck" id="pwdCheck"><br> 
+		<input type="submit" value="전송">
+	</form>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function increaseBtn() {
+		let tag = document.getElementById("spanCount")
+		tag.innerHTML = parseInt(tag.innerHTML) + 1
+	}
+</script>
+</head>
+<body>
+	<span id="spanCount">0</span>번 클릭		<!-- inline태그 : span -->
+	<input type="button" value="클릭" onclick="increaseBtn()">
+</body>
+</html>

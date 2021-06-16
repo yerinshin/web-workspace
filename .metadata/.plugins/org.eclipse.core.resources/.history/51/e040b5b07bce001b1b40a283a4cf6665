@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	img	{
+		width : 1000px;
+	}
+</style>
+<script>
+
+</script>
+</head>
+<body>
+<!-- <a href='https://kr.freepik.com/free-photos-vectors/vintage'>Vintage 벡터는 pikisuperstar - kr.freepik.com가 제작함</a> -->
+<div id = "map-image">
+<img src="images/worldmap.jpg" >
+<h1>dd</h1>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function clickBtn(obj) {
+		alert(obj.value)
+	}
+</script>
+</head>
+<body>
+	<input type="text" id="monitor">
+	<div>
+	<button value="1" onclick="clickBtn(this)">1</button>
+	<button value="2" onclick="clickBtn(this)">2</button>
+	<button value="3" onclick="clickBtn(this)">3</button>
+	<button value="4" onclick="clickBtn(this)">4</button>
+	<button value="5" onclick="clickBtn(this)">5</button>
+	<button value="6" onclick="clickBtn(this)">6</button>
+	<button value="7" onclick="clickBtn(this)">7</button>
+	<button value="8" onclick="clickBtn(this)">8</button>
+	<button value="9" onclick="clickBtn(this)">9</button>
+	<button value="0" onclick="clickBtn(this)">0</button><br>
+	<button value="+" onclick="clickBtn(this)">+</button>
+	<button value="-" onclick="clickBtn(this)">-</button>
+	<button value="*" onclick="clickBtn(this)">*</button>
+	<button value="/" onclick="clickBtn(this)">/</button>
+	<button value="=" onclick="clickBtn(this)">=</button>
+	</div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload = function() {
+		
+	}
+	
+	$(document).ready(function() {
+		
+	})
+</script>
+</head>
+<body>
+
+</body>
+</html>
