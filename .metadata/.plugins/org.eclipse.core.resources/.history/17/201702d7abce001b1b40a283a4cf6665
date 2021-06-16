@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+    body{
+     width : 1000px;
+     /* background-image: url(images/worldmap.jpg); */
+    }
+    
+    img {
+    width : 30px;
+    height: 30px;
+    }
+    
+    .map-image {
+    background-image : url(images/worldmap.jpg);
+    background-size : 1000px;
+    width : 1000px;
+     height: 700px; 
+    
+    }
+    
+/*     .lacation img {
+       position: absolute;
+    } */
+    
+     #newYork {
+       position: absolute;
+       left : 240px;
+       top : 190px;
+    } 
+    
+</style>
+<script>
+   window.onload = function() {
+      
+      let timeTags = document.getElementByTagName("h3")
+      timeTags.forEach(function(element) {
+         element.style.display = 'none'
+      })
+   }
+   
+   function getTime(){
+      alert('!!')
+      let date = new Date()
+      console.log(date) 
+      
+      
+/*       //서울 일때
+      let locationTime = document.getElementById("seoulTime")
+      
+      msg = locationTime.innerHTML
+      msg += getWorldTime(+9)
+      
+      locationTime.innerHTML = msg
+      
+      locationTime.style.display = 'block'	//클릭한 지역 시간 보이게 */
+      
+      //뉴욕일 때
+      let locationTime = document.getElementById("newYorkTime")
+      
+      msg = locationTime.innerHTML
+      msg += date
+      
+      locationTime.innerHTML = msg
+      
+      locationTime.style.display = 'block'	//클릭한 지역 시간 보이게
+      
+      
+   }
+   
+   function getWorldTime(tzOffset) { // 24시간제
+	      var now = new Date();
+	      var tz = now.getTime() + (now.getTimezoneOffset() * 60000) + (tzOffset * 3600000);
+	      now.setTime(tz);
+
+	      var s = leadingZeros(now.getFullYear(), 4) +
+	         '-' + leadingZeros(now.getMonth() + 1, 2) +
+	         '-' + leadingZeros(now.getDate(), 2) +
+	         ' ' + leadingZeros(now.getHours(), 2) +
+	         ':' + leadingZeros(now.getMinutes(), 2) +
+	         ':' + leadingZeros(now.getSeconds(), 2);
+
+	      return s;
+	   }
+	   function leadingZeros(n, digits) {
+	      var zero = '';
+	      n = n.toString();
+
+	      if (n.length < digits) {
+	         for (i = 0; i < digits - n.length; i++) zero += '0';
+	      }
+	      return zero + n;
+	   }
+</script>
+</head>
+<body>
+<!-- <a href='https://kr.freepik.com/free-photos-vectors/vintage'>Vintage 벡터는 pikisuperstar - kr.freepik.com가 제작함</a> -->
+<div class = "map-image">
+   <div class="location">
+      <img id="newYork" src="images/star.png" onclick="getTime()">
+   
+   </div>
+</div>
+<div class="worldTime">
+<h3 id ="seoulTime">현재 서울 시각 : </h3>
+</div> 
+
+
+</body>
+</html>

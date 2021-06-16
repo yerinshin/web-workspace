@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+    body{
+     width : 1000px;
+     /* background-image: url(images/worldmap.jpg); */
+    }
+    
+    img {
+    width : 30px;
+    height: 30px;
+    }
+    
+    .map-image {
+    background-image : url(images/worldmap.jpg);
+    background-size : 1000px;
+    width : 1000px;
+     height: 700px; 
+    
+    }
+
+    
+     #newYork {
+       position: absolute;
+       left : 240px;
+       top : 190px;
+    } 
+    
+    #seoul {
+       position: absolute;
+       left : 810px;
+       top : 210px;
+    }
+    
+    #paris {
+       position: absolute;
+       left : 455px;
+       top : 170px;
+    }
+    
+    #
+    
+</style>
+<script>
+
+     window.onload = function() {
+   	  let timeTags = document.querySelectorAll("h3")
+   	  console.log(timeTags)
+   	  
+      timeTags.forEach(function(element) {
+         element.style.display = 'none'
+      })
+   }  
+   
+   function getWorldTime(tzOffset) { // 24시간제
+	      var now = new Date();
+	      var tz = now.getTime() + (now.getTimezoneOffset() * 60000) + (tzOffset * 3600000);
+	      now.setTime(tz);
+
+	      var s = leadingZeros(now.getFullYear(), 4) +
+	         '-' + leadingZeros(now.getMonth() + 1, 2) +
+	         '-' + leadingZeros(now.getDate(), 2) +
+	         ' ' + leadingZeros(now.getHours(), 2) +
+	         ':' + leadingZeros(now.getMinutes(), 2) +
+	         ':' + leadingZeros(now.getSeconds(), 2);
+
+	      return s;
+	   }
+	   function leadingZeros(n, digits) {
+	      var zero = '';
+	      n = n.toString();
+
+	      if (n.length < digits) {
+	         for (i = 0; i < digits - n.length; i++) zero += '0';
+	      }
+	      return zero + n;
+	   }
+   
+   function getTime(loc){
+	   console.log(loc)
+	   
+	   	  alert('!!')
+	     
+	      let time = loc
+	      time += 'Time' 
+	      
+	      console.log(time)
+	      console.log(typeof(time))
+	      
+	   
+	      //서울 일때
+	      let locationTime = document.getElementById(`${time}`)
+	      console.log(locationTime)
+	      locationTime.style.display = 'block'
+	      
+	      msg = locationTime.innerHTML
+	      
+	      switch(loc){ 
+		      case 'seoul' :
+		      	msg += getWorldTime(+9)
+		    	break;
+		      case 'newYork' :
+		      	msg += getWorldTime(-5)
+		      	break;
+		      case 'paris' :
+		     	 msg += getWorldTime(+1)
+		     	 break;
+		      case 'china' :
+		    	 msg += getWorldTime(+8)
+		      
+	  	 }
+	   
+	      locationTime.innerHTML = msg 
+      
+   }
+   
+   
+</script>
+</head>
+<body>
+<!-- <a href='https://kr.freepik.com/free-photos-vectors/vintage'>Vintage 벡터는 pikisuperstar - kr.freepik.com가 제작함</a> -->
+<div class = "map-image">
+   <div class="location">
+      <img id="seoul" src="images/star.png" onclick="getTime('seoul')">   
+      <img id="newYork" src="images/star.png" onclick="getTime('newYork')">
+      <img id="paris" src="images/star.png" onclick="getTime('paris')">
+   
+   </div>
+</div>
+<div class="worldTime">
+<h3 id ="seoulTime">현재 서울 시각 : </h3>
+<h3 id ="newYorkTime">현재 뉴욕 시각 : </h3>
+<h3 id ="parisTime">현재 파리 시각 : </h3>
+</div> 
+
+
+</body>
+</html>
