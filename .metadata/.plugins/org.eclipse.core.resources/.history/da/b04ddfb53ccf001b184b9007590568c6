@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div {
+		border : 1px solid red;
+	}
+</style>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$('button').click(function(){
+		//	$('p').remove()
+			$('div').remove()	//div의 자식만 지움
+		//	$('div').empty()	//div까지 다지움
+		})
+	})
+</script>
+</head>
+<body>
+	<div>
+		<p id="id01">나는 홍길동이다</p>
+		<mark class="c01">나는 김길동이다</mark>
+		<p class="c01">나는 김길동이다</p>	
+	</div>
+	<p id="id02">나는 박길동이다</p>
+	<button>삭제</button>
+</body>
+</html>

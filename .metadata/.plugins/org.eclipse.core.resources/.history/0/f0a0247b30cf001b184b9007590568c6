@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+	$(document).ready(function(){
+		
+		
+		$('#btn01').click(function() {
+			
+			$('p').text('<mark>문장이 변환되었습니다</mark>') //매개변수 존재하면 setter역할
+			
+		/*
+			let pTags = document.getElementsByTagName("p")
+			for(let i = 0; i < pTags.length; i++){
+				pTags[i].innerText = '문장이 변환되었습니다'
+			}
+		*/
+		
+		})
+		
+		$('#btn02').click(function() {
+			$('p').html('<mark>문장이 변환되었습니다</mark>')
+		})
+		
+	})
+</script>
+</head>
+<body>
+	<a href="http://www.daum.net">사이트 이동</a>
+	<p>첫번째 문장입니다.</p>
+	<p>두번째 문장입니다.</p>
+	<button id="btn01">TEXT변환</button>
+	<button id="btn02">HTML변환</button>
+	<button id="btn03">주소변환</button>
+</body>
+</html>

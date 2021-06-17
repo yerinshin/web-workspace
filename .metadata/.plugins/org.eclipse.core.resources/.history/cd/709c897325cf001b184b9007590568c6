@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+
+	let starFunc= function() {
+		console.log($('h1')[0])
+	}
+
+	$(document).ready(function() {
+		
+		setInterval(function(){
+			starFunc()
+		}, 1000)
+		
+	})
+/*
+	$(document).ready(function(){
+		let hTag = document.getElementById("htag")
+		let msg = '' 
+		msg	=hTag.innerHTML
+		console.log(msg)
+		
+		setInterval(function(){
+			msg += '*'
+			hTag.innerHTML = msg
+		}, 1000)
+		
+	})
+*/
+</script>
+</head>
+<body>
+	<h1 id = "htag">start : </h1>
+</body>
+</html>

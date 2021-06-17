@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.week{
+		
+	}
+
+	.day{
+		float : left;
+		width : 100px;
+		height : 100px;
+		text-align : center;
+	}
+
+</style>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>
+	$(document).ready(function(){
+		//alert('!!!')
+		
+	})
+</script>
+</head>
+<body>
+	<div class="week">	
+		<div class="day"><b>월</b></div>
+		<div class="day"><b>화</b></div>
+		<div class="day"><b>수</b></div>
+		<div class="day"><b>목</b></div>
+		<div class="day"><b>금</b></div>
+		<div class="day"><b>토</b></div>
+		<div class="day"><b>일</b></div>
+	</div>
+		
+	
+</body>
+</html>

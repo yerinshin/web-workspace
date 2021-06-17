@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+	$(document).ready(function(){
+
+		
+	})
+</script>
+</head>
+<body>
+	<p>첫번째 문장입니다.</p>
+	<p>두번째 문장입니다.</p>
+	<button id="btn01">TEXT변환</button>
+</body>
+</html>
