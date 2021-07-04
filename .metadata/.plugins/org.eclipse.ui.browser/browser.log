@@ -10,3 +10,17 @@
 6월 17, 2021 16:22:08.222 [9044:14168:0617/162208.222:ERROR:mcs_client.cc(755)] Received close command, resetting connection.
 6월 17, 2021 17:23:36.660 [9044:14168:0617/172336.660:ERROR:mcs_client.cc(755)] Received close command, resetting connection.
 6월 17, 2021 17:40:10.514 [9044:14168:0617/174010.513:ERROR:mcs_client.cc(755)] Received close command, resetting connection.
+
+6월 18, 2021 09:32:53.384 NEW SESSION
+6월 18, 2021 09:32:53.384 [13400:11916:0618/093253.384:ERROR:device_event_log_impl.cc(214)] [09:32:53.384] Bluetooth: bluetooth_adapter_winrt.cc:1072 Getting Default Adapter failed.
+
+6월 22, 2021 09:15:57.841 NEW SESSION
+6월 22, 2021 09:15:57.841 [10396:2664:0622/091557.840:ERROR:device_event_log_impl.cc(214)] [09:15:57.841] Bluetooth: bluetooth_adapter_winrt.cc:1072 Getting Default Adapter failed.
+6월 22, 2021 13:09:03.75 [4696:7632:0622/130903.075:ERROR:device_event_log_impl.cc(214)] [13:09:03.075] Bluetooth: bluetooth_adapter_winrt.cc:1072 Getting Default Adapter failed.
+
+6월 24, 2021 09:32:15.261 NEW SESSION
+6월 24, 2021 09:32:15.261 [10920:13572:0624/093215.253:ERROR:device_event_log_impl.cc(214)] [09:32:15.253] Bluetooth: bluetooth_adapter_winrt.cc:1072 Getting Default Adapter failed.
+6월 24, 2021 17:28:12.587 [10920:13572:0624/172812.587:ERROR:device_event_log_impl.cc(214)] [17:28:12.587] Bluetooth: bluetooth_adapter_winrt.cc:1072 Getting Default Adapter failed.
+
+6월 30, 2021 23:45:29.701 NEW SESSION
+6월 30, 2021 23:45:29.701 [17328:4272:0630/234529.700:ERROR:device_event_log_impl.cc(214)] [23:45:29.700] Bluetooth: bluetooth_adapter_winrt.cc:1072 Getting Default Adapter failed.

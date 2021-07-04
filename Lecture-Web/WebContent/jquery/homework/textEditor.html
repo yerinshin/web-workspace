@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.editorDIV {
+		width : 500px;
+		height : 300px;
+		border : 0.5px solid black;
+	}
+</style>
+<!-- <script src="js/jquery-3.6.0.min.js"></script> -->
+<script>
+	$(document).ready(function(){
+		
+	})
+</script>
+</head>
+<body>
+	<!-- 
+		1. 글씨체 선택
+		2. 폰트 크기
+		3. 굵게 , 기울이게, 밑줄
+		4. 글자 색 변경
+		5. 백그라운드 색 변경
+		6. 정렬..
+	 -->
+	 
+	<div id="text-editor">
+		<select name="font-select">
+			<option value="">글꼴</option>
+			<option value="godic">고딕</option>
+			<option value="gulim">굴림</option>
+			<option value="Han-Serif ">Han Serif</option>
+		</select>
+		<select name="font-size" >
+			<option value="">폰트크기</option>
+			<option value="10">10</option>
+			<option value="12">20</option>
+			<option value="14">30</option>
+			<option value="20">40</option>
+		</select>
+		<button id="bold"  onclick="document.execCommand('bold')"><b>가</b></button>
+		<button id="italic" onclick="document.execCommand('Italic')"><i>가</i></button>
+		<button id="underline" onclick="document.execCommand('Underline')"><u>가</u></button>
+		
+		<button id="align-left" onclick="document.execCommand('justifyleft')">왼쪽정렬</button>
+		<button id="align-center" onclick="document.execCommand('justifycenter')">가운데정렬</button>
+		<button id="align-right" onclick="document.execCommand('justifyright')">오른쪽정렬</button>
+		<br><br>
+<!-- 		<textarea id="content" cols="70" rows="20" ></textarea> -->
+		<div class="editorDIV" contenteditable="true">
+	</div>
+</body>
+</html>

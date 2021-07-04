@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	img {
+		width : 220px;
+		height : 220px;
+	}
+</style>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$('button').click(function(){
+		//	$('body').append('<img src="/Lecture-Web/css/images/smile.png">')
+		//	$('img').first().appendTo('body')
+			$('img').last().prependTo('body')
+		})
+		
+	})
+</script>
+</head>
+<body>
+	<img src="/Lecture-Web/css/images/dog.jpg">
+	<img src="/Lecture-Web/css/images/bear.jpg">
+	<img src="/Lecture-Web/css/images/bear2.jpg">
+	<img src="/Lecture-Web/css/images/sun.jpg">
+	<br><br>
+	<button>클릭</button>	
+</body>
+</html>

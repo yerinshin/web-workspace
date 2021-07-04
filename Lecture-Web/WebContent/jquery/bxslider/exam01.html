@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	img {
+		height : 300px;
+	}
+	
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $('.slider').bxSlider({			//Initailize the slider
+    	captions : true,
+    	slideWidth : 300,
+    	sliedHeight : 300,
+    	auto: true,
+    	autoControls: true,
+    	stopAutoOnClick: true,
+    	mode : 'vertical'
+    }) 
+  })
+</script>
+</head>
+<body>
+	<div class="slider">
+		<div><img src="/Lecture-Web/css/images/dog.jpg" title="깅아지"></div>
+		<div><img src="/Lecture-Web/css/images/bear.jpg" title="곰돌이"></div>
+		<div><img src="/Lecture-Web/css/images/bear2.jpg" title="곰돌이들"></div>
+		<div><img src="/Lecture-Web/css/images/sun.jpg" title="햇님"></div>
+	</div>
+</body>
+</html>
