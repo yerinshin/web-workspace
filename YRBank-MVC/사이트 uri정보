@@ -1,0 +1,22 @@
+							가상 uri
+전체q&a게시판조회				/board/boardList.do
+상세게시판조회					/board/boardDetail.do
+게시글등록폼					/board/boardWrite.do
+게시글등록처리					/board/boardWriteProcess.do
+게시글수정폼					/board/boardUpdate.do
+게시글수정처리					/board/boardUpdateProcess.do
+게시글삭제						/board/boardDelete.do
+댓글 						???
+
+회원가입폼						/member/signUp.do
+회원가입처리					/member/signUpProcess.do
+로그인폼						/member/login.do
+로그인처리						/member/loginProcess.do
+로그아웃						/member/logout.do
+
+계좌등록						/account/accountOpen.do
+전체내계좌조회					/account/accountList.do
+상세계좌조회					/account/accountDetail.do
+
+이체							/transaction/transfer.do
+거래내역조회					/transaction/history.do

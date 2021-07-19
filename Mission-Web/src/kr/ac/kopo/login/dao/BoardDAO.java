@@ -85,6 +85,7 @@ public class BoardDAO {
 				board.setNo(no);
 				board.setTitle(title);
 				board.setWriter(writer);
+				
 				board.setRegDate(regDate);
 				
 				list.add(board);

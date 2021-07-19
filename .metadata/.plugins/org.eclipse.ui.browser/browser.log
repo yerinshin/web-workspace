@@ -24,3 +24,23 @@
 
 6월 30, 2021 23:45:29.701 NEW SESSION
 6월 30, 2021 23:45:29.701 [17328:4272:0630/234529.700:ERROR:device_event_log_impl.cc(214)] [23:45:29.700] Bluetooth: bluetooth_adapter_winrt.cc:1072 Getting Default Adapter failed.
+
+7월 04, 2021 16:31:02.993 NEW SESSION
+7월 04, 2021 16:31:02.993 [4304:9204:0704/163102.992:ERROR:device_event_log_impl.cc(214)] [16:31:02.992] Bluetooth: bluetooth_adapter_winrt.cc:1072 Getting Default Adapter failed.
+7월 04, 2021 19:45:06.938 [4304:11324:0704/194506.937:ERROR:mcs_client.cc(755)] Received close command, resetting connection.
+7월 05, 2021 11:31:22.613 [4304:9204:0705/113122.613:ERROR:device_event_log_impl.cc(214)] [11:31:22.613] Bluetooth: bluetooth_adapter_winrt.cc:1072 Getting Default Adapter failed.
+
+7월 13, 2021 20:19:54.450 NEW SESSION
+7월 13, 2021 20:19:54.450 [12204:4656:0713/201954.449:ERROR:device_event_log_impl.cc(214)] [20:19:54.449] Bluetooth: bluetooth_adapter_winrt.cc:1072 Getting Default Adapter failed.
+7월 13, 2021 20:36:49.108 [1312:8568:0713/203649.108:ERROR:device_event_log_impl.cc(214)] [20:36:49.108] Bluetooth: bluetooth_adapter_winrt.cc:1072 Getting Default Adapter failed.
+
+7월 14, 2021 21:04:31.309 NEW SESSION
+7월 14, 2021 21:04:31.309 [6148:14300:0714/210431.308:ERROR:device_event_log_impl.cc(214)] [21:04:31.308] Bluetooth: bluetooth_adapter_winrt.cc:1072 Getting Default Adapter failed.
+
+7월 15, 2021 10:20:16.875 NEW SESSION
+7월 15, 2021 10:20:16.875 [9812:1416:0715/102016.874:ERROR:device_event_log_impl.cc(214)] [10:20:16.874] Bluetooth: bluetooth_adapter_winrt.cc:1072 Getting Default Adapter failed.
+7월 15, 2021 10:23:19.734 [13756:13328:0715/102319.733:ERROR:device_event_log_impl.cc(214)] [10:23:19.733] Bluetooth: bluetooth_adapter_winrt.cc:1072 Getting Default Adapter failed.
+
+7월 19, 2021 10:33:19.626 NEW SESSION
+7월 19, 2021 10:33:19.626 [13396:8300:0719/103319.625:ERROR:device_event_log_impl.cc(214)] [10:33:19.625] Bluetooth: bluetooth_adapter_winrt.cc:1072 Getting Default Adapter failed.
+7월 19, 2021 17:50:11.700 [13396:8300:0719/175011.700:ERROR:account_info_fetcher.cc(62)] OnGetTokenFailure: Invalid credentials (credentials rejected by server).

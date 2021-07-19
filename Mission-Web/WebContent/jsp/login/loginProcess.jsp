@@ -1,75 +1,53 @@
-<%@page import="kr.ac.kopo.member.MemberVO"%>
-<%@page import="kr.ac.kopo.util.JDBCClose"%>
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.PreparedStatement"%>
-<%@page import="kr.ac.kopo.util.ConnectionFactory"%>
-<%@page import="java.sql.Connection"%>
+<%@page import="kr.ac.kopo.login.dao.LoginDAO"%>
+<%@page import="kr.ac.kopo.login.vo.LoginVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%--
-	작업순서
-	1. login.jsp에서 날라오는 파라미터 추출(id, password)
-	2. 추출된 ID, PASSWORD에 맞는 회원의 존재여부 판단(DB, t_member)
-	3. 로그인 성공 시, 세션에 회원정보를 등록
-	4. 존재여부에 따른 페이지 이동(로그인 성공 : index.jsp, 로그인 실패 : login.jsp)
- --%>
-
- <%
- 	request.setCharacterEncoding("utf-8");
- 
- 	String id = request.getParameter("id");
- 	String password = request.getParameter("password");
- 	
- 	Connection conn = new ConnectionFactory().getConnection();
-	StringBuilder sql = new StringBuilder();
+<%
+	request.setCharacterEncoding("utf-8");
 	
-	sql.append("select id, password, name, email_id||'@'||email_domain as email, tel1||tel2||tel3 as tel, post, basic_addr||detail_addr as addr");
-	sql.append("  from t_member ");
-	sql.append(" where id = ? and password= ? ");
+	// 파라미터 추출
+	String id = request.getParameter("id");
+	String password = request.getParameter("password");
 	
-	PreparedStatement pstmt = conn.prepareStatement(sql.toString());
+	// 객체생성 및 초기화
+	LoginVO loginVO = new LoginVO();
+	loginVO.setId(id);
+	loginVO.setPassword(password);
 	
-	pstmt.setString(1, id);
-	pstmt.setString(2, password);
+	// DB에서 로그인 수행
+	LoginDAO dao = new LoginDAO();
+	LoginVO userVO = dao.login(loginVO);
 	
-	ResultSet rs = pstmt.executeQuery();
-	
-	String loginedId = null;
-	String loginedPwd = null;
-	MemberVO member = null;
-	
-	if(rs.next()){
-		loginedId = rs.getString("id");
-		loginedPwd = rs.getString("password");
-		String name = rs.getString("name");
-		String email = rs.getString("email");
-		String tel = rs.getString("tel");
-		String post = rs.getString("post");
-		String addr = rs.getString("addr");
-		
-		member = new MemberVO();
-		member.setId(loginedId);
-		member.setPassword(loginedPwd);
-		member.setName(name);
-		member.setEmail(email);
-		member.setTel(tel);
-		member.setPost(post);
-		member.setAddress(addr);
-		
-	}
-	JDBCClose.close(conn, pstmt);
-	
-	
-	
-	
-	//세션등록
-	session.setAttribute("member", member);	
-	
-	if( member != null) {
-		response.sendRedirect("/Mission-Web/index.jsp");
+	/*
+		userVO null 이면 로그인 실패
+		userVO null 아니면 로그인 성공
+	*/
+	String msg = null;
+	String url = null;
+	if(userVO == null) {
+		msg = "아이디 또는 패스워드를 잘못입력하셨습니다";
+		url = "/Mission-Web/jsp/login/login.jsp";
+		//url = "/jsp/login/login.jsp";			//forward의 url
 	} else {
-		response.sendRedirect("login.jsp");
+		msg = userVO.getName() + "님 환영합니다";
+		url="/Mission-Web/index.jsp";
+		//url="/index.jsp";						//forward의 url
+		
+		//세션 등록
+		session.setAttribute("userVO", userVO);
 	}
 	
-	
- %>
+	pageContext.setAttribute("msg", msg);
+	pageContext.setAttribute("url", url);
+%>
+<script>
+	alert('${ msg }');			<%-- 작은 따옴표 필수 ! --%>
+	location.href= '${ url }';
+</script>
+
+<%-- 
+ 포워드는 url바뀌지 않아서 페이지 이동에서 사용할 수 없다. --> 쓰려면 sendRedirect
+<jsp:forward page=" ${ url }">
+	<jsp:param name="msg" value="${ msg }"/>
+</jsp:forward> 
+--%>

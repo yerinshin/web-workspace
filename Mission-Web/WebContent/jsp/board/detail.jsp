@@ -1,5 +1,3 @@
-<%@page import="kr.ac.kopo.board.vo.BoardFileVO"%>
-<%@page import="java.util.List"%>
 <%@page import="kr.ac.kopo.login.dao.BoardDAO"%>
 <%@page import="kr.ac.kopo.util.JDBCClose"%>
 <%@page import="kr.ac.kopo.board.vo.BoardVO"%>
@@ -14,24 +12,16 @@
 	http://localhost:9999/Mission-Web/jsp/board/detail.jsp?no=2
 --%>
 <%
-	//1. 게시물 번호 추출
-	int boardNo = Integer.parseInt(request.getParameter("no"));
-	String type = request.getParameter("type");
-	
+	//게시물 번호 추출
+	int boardNo = Integer.parseInt(request.getParameter("no"));	
 	BoardDAO dao = new BoardDAO(); 
-	//2-1 list에서 넘어온 detail.jsp일때만 t_board 해당 게시물 조회수 증가
-	if(type != null && type.equals("list")){
-		dao.addViewCnt(boardNo);		
-	}
-	//2-2. 데이터베이스 t_board테이블에서 해당 게시물 조회
-	BoardVO board = dao.selectOne(boardNo);
-
-	//2-3. t_board_file 테이블에서 해당 게시물의 첨부파일 조회
-	List<BoardFileVO> fileList = dao.selectFileByNo(boardNo);
 	
+	dao.addViewCnt(boardNo);
+	
+	BoardVO board = dao.selectOne(boardNo);
 	pageContext.setAttribute("board", board);
 	//session.setAttribute("board", board); 로 써야 updateForm.jsp에서 보임 근데 이렇게 쓰지 말기!
-	pageContext.setAttribute("fileList", fileList);
+	
 %>
 <!DOCTYPE html>
 <html>
@@ -48,12 +38,14 @@
 		})
 		
 		$('#updateBtn').click(function(){
-			location.href = "updateForm.jsp?no=${param.no}"
+			boardNo = ${ board.no }
+			location.href = "updateForm.jsp?no="+boardNo
+		//  location.href = "updateForm.jsp?no=${ param.no }"
 		})
 		
 		$('#deleteBtn').click(function(){
-			if(confirm('[${param.no}]번 게시글을 삭제할까요?'))
-			location.href = "delete.jsp?no=${param.no}"
+			boardNo = ${ board.no }
+			location.href = "delete.jsp?no="+boardNo
 		})
 	})
 </script>
@@ -93,19 +85,6 @@
 			<th width="25%">등록일</th>
 			<td>${ board.regDate }</td>
 		</tr>
-		<tr>
-			<th>첨부파일</th>
-			<td>
-				<c:forEach items="${ fileList }" var="file">
-					<%-- href : eclipse-work밑의 경로(서버경로), web-workspace아님 --%>
-					<a href="/Mission-Web/upload/${ file.fileSaveName }">
-						<c:out value="${ file.fileOriName }" />
-					</a>
-					(${ file.fileSize } bytes)
-					<br>
-				</c:forEach>
-			</td>
-		</tr>
 		</table>
 		<button id="updateBtn">수정</button>
 		<button id="deleteBtn">삭제</button>
@@ -116,7 +95,7 @@
 		<%@ include file="/jsp/include/bottom.jsp" %>	
 	</footer>
 </body>
-
+</html>
 
 
 

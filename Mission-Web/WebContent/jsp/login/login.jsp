@@ -59,7 +59,7 @@
 			<hr>
 			<br>
 			
-			<form action="loginProcessJY.jsp" method="post" 
+			<form action="loginProcess.jsp" method="post" 
 					name="loginForm" onsubmit="return checkForm()">
 				<table style="width:40%">
 					<tr>
