@@ -78,7 +78,7 @@
    	 <div class="contact list-table">
         <div class="container">
             <div class="col-md-12">
-		   	 <table class="table table-striped">
+		   	 <table class="table table-striped table-hover">
 				  <thead>
 				    <tr>
 				      <th scope="col">#</th>

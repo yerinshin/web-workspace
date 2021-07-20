@@ -17,4 +17,5 @@
     <fullyQualifiedTypeName name="kr.ac.kopo.member.vo.MemberVO"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
     <fullyQualifiedTypeName name="java.io.PrintWriter"/>
+    <fullyQualifiedTypeName name="kr.ac.kopo.board.dao.BoardDAO"/>
 </qualifiedTypeNameHistroy>

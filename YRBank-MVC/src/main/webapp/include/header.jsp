@@ -54,7 +54,7 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <li><a class="dropdown-item" href="<%= request.getContextPath()%>/account/accountOpen.do">계좌생성</a></li>
-            <li><a class="dropdown-item" href="#">계좌조회</a></li>
+            <li><a class="dropdown-item" href="<%= request.getContextPath()%>/account/accountList.do">계좌조회</a></li>
             <li><a class="dropdown-item" href="#">계좌송금</a></li>
           </ul>
         </li>

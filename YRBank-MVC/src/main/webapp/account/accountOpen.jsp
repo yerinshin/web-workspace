@@ -169,7 +169,7 @@
                            </table>
                           
                             <div class=" col-md-12">
-                                <button type="submit" class="send">회원가입</button>
+                                <button type="submit" class="send">계좌개설하기</button>
                             </div>
                         
                     </form>
