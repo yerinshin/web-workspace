@@ -9,19 +9,20 @@ import java.util.List;
 import kr.ac.kopo.account.vo.AccountVO;
 import kr.ac.kopo.util.ConnectionFactory;
 
-public class AccountDAO {
+
+//local DB : SCOTT, TIGER 에 연결
+public class AccountDAO_2 {
 	
 	public void openAccount(AccountVO account, String userId) {
+		
 		StringBuilder sql = new StringBuilder();
-		sql.append("insert into t_account(accountno, account_pwd, account_owner, balance, account_nickname, user_id) ");
+		sql.append("insert into t_account(accountNo, account_pwd, account_owner, balance, account_nickname, user_id) ");
 		sql.append(" values(?,?,?,?,?,?) ");
 		
 		try(
 			Connection conn = new ConnectionFactory().getConnection();
-			
 			PreparedStatement pstmt = conn.prepareStatement(sql.toString());
 		) {
-			System.out.println("dao");
 			int cnt = 1;
 			pstmt.setString(cnt++, account.getAccountNo());
 			pstmt.setString(cnt++, account.getAccountPwd());

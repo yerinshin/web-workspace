@@ -73,4 +73,40 @@ public class MemberDAO {
 		return loginMember;
 	}
 	
+	public MemberVO selectByEmail(String email) {
+		MemberVO member = null;
+		
+		StringBuilder sql = new StringBuilder();
+		sql.append("select * ");
+		sql.append(" from member_tbl ");
+		sql.append(" where email = ? ");
+		
+		try(
+				Connection conn = new ConnectionFactory().getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql.toString());
+		) {
+			pstmt.setString(1, email);
+			
+			ResultSet rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				member = new MemberVO();
+				member.setId(rs.getString("id"));
+				member.setPassword(rs.getString("password"));
+				member.setName(rs.getString("name"));
+				member.setSs1(rs.getString("ss1"));
+				member.setSs2(rs.getString("ss2"));
+				member.setEmail(rs.getString("email"));
+				member.setTel(rs.getString("tel"));
+				member.setLastOpenAccDate(rs.getString("last_open_acc_date"));
+				member.setType(rs.getString("type"));
+			}
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return member;
+	}
+	
 }

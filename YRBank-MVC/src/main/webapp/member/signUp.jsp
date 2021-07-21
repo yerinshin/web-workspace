@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -27,7 +28,12 @@
      		}
      		
      		.send {
-     		margin-top : 20px;
+     			margin-top : 20px;
+     		}
+     		.c-out {
+     			padding-left : 10px;
+     			margin-bottom : 15px;
+     			height: 80px;
      		}
      	</style>
      
@@ -136,7 +142,14 @@
                            		</tr>
                            		<tr>
                            			<th>이메일</th>
-                           			<td><input class="form-control" placeholder=" 예) email@gmail.com" type="email" name="email"></td>
+                           			<c:choose>
+	                     				<c:when test="${ empty kakaoEmail }">
+	                           			<td><input class="form-control" placeholder=" 예) email@gmail.com" type="email" name="email"></td>
+	                           			</c:when>
+	                           			<c:otherwise>
+	                           			<td><c:out value="${ kakaoEmail }"/></td>
+	                           			</c:otherwise>
+                           			</c:choose>
                            		</tr>
                            		<tr>
                            			<th>전화번호</th>

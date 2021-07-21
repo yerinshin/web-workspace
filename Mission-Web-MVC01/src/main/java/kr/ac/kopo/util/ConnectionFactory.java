@@ -19,7 +19,7 @@ public class ConnectionFactory {
 			String password = "tiger";
 			
 			conn = DriverManager.getConnection(url ,user, password);
-			
+			System.out.println("연결");
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

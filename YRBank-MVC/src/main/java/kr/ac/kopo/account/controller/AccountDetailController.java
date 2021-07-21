@@ -11,7 +11,7 @@ public class AccountDetailController implements Controller {
 
 	@Override
 	public String handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		
+		request.setCharacterEncoding("utf-8");
 		String accountNo = request.getParameter("accountNo");
 		
 		AccountDAO dao = new AccountDAO();
