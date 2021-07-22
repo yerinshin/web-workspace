@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import kr.ac.kopo.account.vo.AccountVO;
+import kr.ac.kopo.account.vo.TransactionHistoryVO;
 import kr.ac.kopo.util.ConnectionFactory;
 
 public class AccountDAO {
@@ -101,6 +102,7 @@ public class AccountDAO {
 		
 		return account;
 }
+	
 	public void deleteAccount(AccountVO account) {
 		
 		StringBuilder sql = new StringBuilder();
@@ -119,5 +121,45 @@ public class AccountDAO {
 			e.printStackTrace();
 		}
 		
+	}
+	
+	//--------------------------------------------------------------------
+	//--------------------- Transaction History 관련 dao ------------------
+	//--------------------------------------------------------------------
+
+	public List<TransactionHistoryVO> selectTransHistory(String accountNo) {
+		
+		List<TransactionHistoryVO> transHistoryList = new ArrayList<>();
+		
+		StringBuilder sql = new StringBuilder();
+		sql.append("select to_char(transaction_date,'yy/mm/dd hh:mi') as trans_date, others_name, ");
+		sql.append("  	trans_money, balance from transaction_history ");
+		sql.append(" where my_acc_no = ? ");
+		sql.append(" order by transaction_date desc ");
+		
+		try(
+				Connection conn = new ConnectionFactory().getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql.toString());
+		){
+			pstmt.setString(1, accountNo);
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				TransactionHistoryVO transHistory = new TransactionHistoryVO();
+				transHistory.setTransDate(rs.getString("trans_date"));
+				transHistory.setOthersName(rs.getString("others_name"));
+				transHistory.setTransMoney(rs.getInt("trans_money"));
+				transHistory.setBalance(rs.getInt("balance"));
+				transHistoryList.add(transHistory);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		
+		return transHistoryList;
 	}
 }

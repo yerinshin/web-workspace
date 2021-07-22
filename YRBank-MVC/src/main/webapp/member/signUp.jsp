@@ -18,6 +18,7 @@
      			width : 30%;
      		}
      		
+     		
      		input.form-control {
      			margin-top : 20px;
      		}

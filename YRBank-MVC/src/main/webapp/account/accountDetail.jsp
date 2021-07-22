@@ -61,11 +61,25 @@
 	}
 	
 	#trans-info-col {
-		width : 40%;
+		width : 35%;
 	}
 	
 	#trans-money-col {
-		padding-left : 50px;
+		padding-left : 100px;
+	}
+	th#balance-col {
+		padding-left : 30px;
+	}
+	th#send-trans-money {
+		color : #d74351;
+		text-align:right;
+		padding-right :150px;
+	}
+	
+	th#receive-trans-money {
+		color : #0c7ffa;
+		text-align:right;
+		padding-right :150px;
 	}
 	
 
@@ -83,6 +97,11 @@
 		//  location.href = "updateForm.jsp?no=${ param.no }"
 		})
 	 --%>
+	 
+	 	$('#acc-trans-btn').click(function(){
+	 		console.log('눌림')
+	 		location.href = "<%= request.getContextPath() %>/account/accountTransfer.do?accountNo=${ account.accountNo }"
+	 	})
 	 
 		$('#acc-delete-btn').click(function(){
 			accountNo = ${ account.accountNo }
@@ -163,30 +182,29 @@
 					      <th scope="col" id="trans-date-col">날짜</th>
 					      <th scope="col" id="trans-info-col">거래정보</th>
 					      <th scope="col" id="trans-money-col">금액</th>
-					   	  <th scope="col">잔액</th>
+					   	  <th scope="col" id="balance-col">잔액</th>
 					    </tr>
 					  </thead>
 					  <tbody>
+					
+					<c:forEach items="${ transHistoryList }" var="transHistory" varStatus="loop">
 					    <tr>
-					      <td>07/21</td>
-					      <td>지에스 25</td>
-					      <th scope="row" id="trans-money">-10000원</th>
-					      <td>Thornton</td>
+					      <td>${ transHistory.transDate }</td>
+					      <td>${ transHistory.othersName }</td>
+					      <c:choose>
+                     		<c:when test="${transHistory.transMoney gt 0 }">
+					      	  	<th scope="row" id="receive-trans-money"> +${ transHistory.transMoney }원</th>
+					        </c:when>
+					        <c:otherwise>
+					     		<th scope="row" id="send-trans-money"> ${ transHistory.transMoney } 원</th>
+					        </c:otherwise>
+					      </c:choose>
+					      
+					      <td>${ transHistory.balance }원</td>
 					      
 					    </tr>
-					    <tr>
-					      <th scope="row">2</th>
-					      <td>Jacob</td>
-					      <td>Thornton</td>
-					      <td>Thornton</td>
-					      
-					    </tr>
-					    <tr>
-					      <th scope="row">3</th>
-					      <td>Larry the Bird</td>
-					     <td>Thornton</td>
-					     <td>Thornton</td>
-					    </tr>
+					 </c:forEach>
+					   
 					  </tbody>
 					</table>
                </div>
