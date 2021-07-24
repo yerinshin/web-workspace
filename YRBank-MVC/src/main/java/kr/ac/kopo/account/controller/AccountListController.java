@@ -23,7 +23,7 @@ public class AccountListController implements Controller {
 		
 		 AccountDAO dao = new AccountDAO(); 
 		 List<AccountVO> accountList = dao.selectAll(userId);
-	
+		
 		 request.setAttribute("accountList", accountList);
 		 
 		return "/account/accountList.jsp";

@@ -12,12 +12,46 @@
 		margin-bottom : 150px;
 	}
 	
+	.title {
+	 padding-bottom : 70px;
+	}
+	
+	.bankType {
+		text-align : center;
+		font-size : 27px;
+	
+		height : 60px;
+		/* margin-bottom : 40px; */
+	}
+	
+	
+	#yr-bank {
+/* 	background : #ffc221;*/
+	background :#e2e2e2; 
+	/* border : 3px solid #e2e2e2;
+	border-bottom : white; */
+	}
+	
+	#other-bank {
+		border-bottom: 3px solid #e2e2e2;
+	}
+	
+	div.accountList {
+		margin-top : 80px;
+	}
+	
 	#btn-read-more {
 		margin : 30px 50px 0px 50px auto;
 	}
 	
 	.account-box {
 		margin : 20px;
+	
+	}
+	
+	.account-box:hover {
+		border : 3px solid #e2e2e2; 
+		opacity :0.9;
 	}
 	
 	.account-add-box {
@@ -41,7 +75,14 @@
 		font-size : 26px;
 	}
 </style>
+<script>
 
+	function goAccountDetail(accountNo) {
+		location.href='<%= request.getContextPath() %>/account/accountDetail.do?accountNo='+accountNo
+		
+	}
+
+</script>
 </head>
  <!-- body -->
 <body class="main-layout">
@@ -71,6 +112,8 @@
       
       	<!-- service --> 
       <div class="service">
+    
+    	 
          <div class="container">
             <div class="row">
                <div class="col-md-8 offset-md-2">
@@ -80,6 +123,19 @@
                   </div>
                </div>
             </div>
+            </div>
+            
+             <div class="row">
+               <div class="col-md-6 bankType" id="yr-bank">
+               <a href="<%= request.getContextPath() %>/account/accountList.do">YR Bank</a>
+               </div>
+               <div class="col-md-6 bankType" id="other-bank">
+               <a href="<%= request.getContextPath()%>/account/openBankAccountList.do">타행계좌</a>
+               </div>
+          </div>
+         
+        
+            <div class="container accountList">
             <div class="row">
             
 				
@@ -87,15 +143,15 @@
 				
 			<c:forEach items="${ accountList }" var="account" varStatus="loop">	
                <div class="col-md-6">
-                  <div class="service-box account-box">
+                  <div class="service-box account-box" onclick="goAccountDetail('${account.accountNo}')">
                   <a id="nickname" href="<%= request.getContextPath() %>/account/accountDetail.do?accountNo=${account.accountNo}"> 
                      ${ account.accountNickName }
                   </a>
                      <h4 id="accountNo">${ account.accountNo }</h4>
                      <h1 id="balance"> ${ account.balance }원</h1>
                     <div class="row">
-                  	<button id="btn-read-more" class="col-md-5 read-more">이체</button>
-                  	<button id="btn-read-more" class="col-md-5 read-more">이용내역</button>
+                  	<button id="btn-read-more" class="col-md-5 read-more" onclick="goAccountDetail('${account.accountNo}')">이체</button>
+                  	<button id="btn-read-more" class="col-md-5 read-more" onclick="goAccountDetail('${account.accountNo}')">이용내역</button>
                   	</div>
                   </div>
                </div>

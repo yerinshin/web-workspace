@@ -24,7 +24,7 @@ public class AccountDetailController implements Controller {
 	
 		
 		List<TransactionHistoryVO> transHistoryList = dao.selectTransHistory(accountNo);
-		System.out.println(transHistoryList);
+	//	System.out.println(transHistoryList);
 		request.setAttribute("transHistoryList", transHistoryList);
 		
 		return "/account/accountDetail.jsp";

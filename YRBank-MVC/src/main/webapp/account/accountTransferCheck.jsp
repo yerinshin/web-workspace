@@ -52,7 +52,13 @@
      	margin-bottom : 150px;
      }
 </style>
-
+<script>
+	$(document).ready(function(){
+		$('#transfer-btn').click(function(){
+			location.href='<%= request.getContextPath()%>/account/accountTransferProcess.do'
+		})
+	})
+</script>
 </head>
  <!-- body -->
  
@@ -97,14 +103,16 @@
          <div class="container">
             <div class="white_bg">
            		<h2>[받는이]</h2>
-      			<h4>은행명 : ${ othersAccount.bankCode }</h4>
-      			<h4>받는이 계좌 : ${ othersAccount.accountNo }</h4>
-      			<h4>이체할금액 : ${ othersAccount.balance }</h4>
+      			<h4>은행명 : ${ transInfo.othersBankName }</h4>
+      			<h4>예금주 : ${ transInfo.otherAccOwner }</h4>
+      			<h4>받는이 계좌 : ${ transInfo.othersAccNo }</h4>
+      			<h4>이체할금액 : ${ transInfo.transMoney }</h4>
       			
            		<h2>[보내는이]</h2>
-           		<h4>출금계좌 : ${ loginMember.name } - ${ myAccNo }</h4>
+           		<h4>${ loginMember.name }</h4> 
+           		<h4>출금계좌 : ${ transInfo.myAccNo }</h4>
       			     <br>
-      			      <button type="submit" class="send" id="send-btn"><strong>이체</strong></button>  
+      			      <button class="send" id="transfer-btn"><strong>이체</strong></button>  
         		 </div>
      		  </div>
       		</div>

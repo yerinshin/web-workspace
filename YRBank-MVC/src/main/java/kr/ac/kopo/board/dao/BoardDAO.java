@@ -16,7 +16,7 @@ public class BoardDAO {
 		
 		int no = 0;
 		StringBuilder sql = new StringBuilder();
-		sql.append(" select board_no_seq.nextval from dual ");
+		sql.append(" select qna_no_seq.nextval from dual ");
 		
 		try (
 			Connection conn = new ConnectionFactory().getConnection();
@@ -37,7 +37,7 @@ public class BoardDAO {
 		
 		StringBuilder sql = new StringBuilder();
 		
-		sql.append("insert into board_tbl(no, title, writer, content) ");
+		sql.append("insert into qna_tbl(no, title, writer, content) ");
 		sql.append(" values(?, ?, ?, ?) ");
 		
 		try (
@@ -63,7 +63,7 @@ public class BoardDAO {
 		// 데이터베이스 t_board 테이블에서 해당 게시물 조회
 		StringBuilder sql = new StringBuilder();
 		sql.append(" select no, title, writer, view_cnt, to_char(reg_date, 'yyyy-mm-dd') as reg_date ");
-		sql.append("  from board_tbl ");
+		sql.append("  from qna_tbl ");
 		sql.append("  order by no desc ");
 		
 		try(
@@ -104,7 +104,7 @@ public class BoardDAO {
 			StringBuilder sql = new StringBuilder();
 			sql.append("select no, title, writer, content, view_cnt ");
 			sql.append("      , to_char(reg_date, 'yyyy-mm-dd') as reg_date ");
-			sql.append(" from board_tbl ");
+			sql.append(" from qna_tbl ");
 			sql.append(" where no = ? ");
 			
 			try(
@@ -137,7 +137,7 @@ public class BoardDAO {
 		
 		StringBuilder sql = new StringBuilder();
 		
-		sql.append(" update board_tbl ");
+		sql.append(" update qna_tbl ");
 		sql.append("  set title= ?, content = ? ");
 		sql.append(" where no= ? ");
 		
@@ -160,7 +160,7 @@ public class BoardDAO {
 	public void delete(int boardNo) {
 		
 		StringBuilder sql = new StringBuilder();
-		sql.append(" delete from board_tbl ");
+		sql.append(" delete from qna_tbl ");
 		sql.append(" where no = ? ");
 		
 		try(
@@ -178,7 +178,7 @@ public class BoardDAO {
 	public void addViewCnt(int boardNo) {
 		
 		StringBuilder sql = new StringBuilder();
-		sql.append(" update board_tbl ");
+		sql.append(" update qna_tbl ");
 		sql.append("   set view_cnt = view_cnt + 1 ");
 		sql.append(" where no = ? ");
 		

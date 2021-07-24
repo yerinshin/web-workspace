@@ -90,12 +90,7 @@
     	<!-- contact -->
     <div class="contact">
         <div class="container">
-      <!--     <div class="col-md-8 offset-md-2">
-                  <div class="title">
-                     <h2>계좌 <strong class="black">이체</strong></h2>
-                     <span>Easy and effective way to get your device repaired.</span>
-                  </div>
-               </div> -->
+
                 <div class="col-md-12">
                 
 <div class="choose_bg">
@@ -103,7 +98,8 @@
             <div class="white_bg">
            
                     <form class="main_form" action="<%= request.getContextPath()%>/account/accountTransferCheck.do" method="post">
-			 		
+			 		<input type="hidden" name="myAccNo" value="${ myAccNo }">
+			 		<input type="hidden" name="myName" value="${ loginMember.name }">
 
                            <table>
                            		<tr>

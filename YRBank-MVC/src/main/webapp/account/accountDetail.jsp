@@ -70,6 +70,10 @@
 	th#balance-col {
 		padding-left : 30px;
 	}
+	
+	th#trans-date-col{
+		padding-left : 40px;
+	}
 	th#send-trans-money {
 		color : #d74351;
 		text-align:right;
