@@ -48,8 +48,28 @@
      margin-bottom : 150px;
      }
      
+     
+     
      section {
      	margin-bottom : 150px;
+     	
+     }
+     
+     h2{
+     	font-size : 30px;
+     	font-weight : bold;
+     }
+     h4 {
+     	font-size : 27px;
+     }
+     
+     #accountCheck {
+     	padding : 40px 40px;
+     }
+     
+     #transfer-btn {
+     	font-size : 25px;
+     
      }
 </style>
 <script>
@@ -83,7 +103,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="titlepage">
-                        <h2>계좌이체</h2>
+                        <h2>계좌정보확인</h2>
                     </div>
                 </div>
             </div>
@@ -101,15 +121,17 @@
                 
 <div class="choose_bg">
          <div class="container">
-            <div class="white_bg">
+            <div class="white_bg" id="accountCheck">
            		<h2>[받는이]</h2>
+           		<br>
       			<h4>은행명 : ${ transInfo.othersBankName }</h4>
       			<h4>예금주 : ${ transInfo.otherAccOwner }</h4>
       			<h4>받는이 계좌 : ${ transInfo.othersAccNo }</h4>
-      			<h4>이체할금액 : ${ transInfo.transMoney }</h4>
-      			
+      			<h4>이체할금액 : ${ transInfo.transMoney }원</h4>
+      			<br><br>
            		<h2>[보내는이]</h2>
-           		<h4>${ loginMember.name }</h4> 
+           		<br>
+           		<h4>예금주 : ${ loginMember.name }</h4> 
            		<h4>출금계좌 : ${ transInfo.myAccNo }</h4>
       			     <br>
       			      <button class="send" id="transfer-btn"><strong>이체</strong></button>  

@@ -19,18 +19,20 @@
                   </div>
                   <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                        <div class="top-box">
+                       <c:if test="${not empty loginMember}">
                         <p> ${ loginMember.name } 님 YR Bank에 오신걸 환영합니다. </p>
+                       </c:if>
                     </div>
                   </div>
                </div>
             </div>
          </div>
-         <div class="container">
+         <div class="container" id="head-top">
             <div class="row">
                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
                   <div class="full">
                      <div class="center-desk">
-                        <div class="logo"> <a href="index.html"><img src="<%= request.getContextPath() %>/resources/images/logo1.png" alt="logo"/></a> </div>
+                        <div  id="logo" class="logo"> <a href="index.html"><img src="<%= request.getContextPath() %>/resources/images/logo1.png" alt="logo"/></a> </div>
                      </div>
                   </div>
                </div>
@@ -70,6 +72,7 @@
                                
                            </ul>
                           </nav>
+                         <!-- 
                         <nav class="main-menu">
                            <ul class="menu-area-main">
                               <li class="active"> <a href="<%= request.getContextPath()%>">Home</a> </li>
@@ -80,6 +83,7 @@
                        	       		<li> <a href="<%= request.getContextPath()%>/product.jsp">MyPage</a> </li>
                             </ul>
                         </nav>
+                        -->
                      </div>
                   </div>
                </div>

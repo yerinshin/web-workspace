@@ -4,6 +4,22 @@
 <html lang="en">
    <head>
      	<jsp:include page="/include/head.jsp"></jsp:include>
+    <style>
+    	.main-menu ul>li a {
+    		font-size : 22px;
+    	}
+    	
+    	.buy {
+    		font-size : 20px;
+    	}
+    	
+/*     #head-top{
+    margin-left : 200px;
+    margin-right : 200px;
+    } */
+    
+  
+    </style>
    </head>
    <!-- body -->
    <body class="main-layout">
@@ -38,7 +54,7 @@
                   </div>
                </div>
                <div class="carousel-item">
-                  <img class="second-slide" src="<%= request.getContextPath() %>/resources/images/banner2.jpg" alt="Second slide">
+                  <img class="second-slide" src="<%= request.getContextPath() %>/resources/images/banner4.png" alt="Second slide">
                   <div class="container">
                      <div class="carousel-caption relative">
                             <h1><strong class="black_bold">Welcome <br></strong> To <br>
@@ -50,12 +66,12 @@
                   </div>
                </div>
                <div class="carousel-item">
-                  <img class="third-slide" src="<%= request.getContextPath() %>/resources/images/banner2.jpg" alt="Third slide">
+                  <img class="third-slide" src="<%= request.getContextPath() %>/resources/images/banner4.png" alt="Third slide">
                   <div class="container">
-                     <div class="carousel-caption relative">
-                        <h1>Our <br> <strong class="black_bold">Latest </strong><br>
-                           <strong class="yellow_bold">Product </strong></h1>
-                        <p>It is a long established fact that a r <br>
+                    <div class="carousel-caption relative">
+                            <h1><strong class="black_bold">Welcome <br></strong> To <br>
+                           <strong class="yellow_bold">YR Bank </strong></h1>
+                        <p> 저의 YR Bank에 오신걸 환영합니다. <br>
                           eader will be distracted by the readable content of a page </p>
                         <a  href="#">see more Products</a>
                      </div>

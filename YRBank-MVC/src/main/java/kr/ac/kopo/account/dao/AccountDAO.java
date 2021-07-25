@@ -340,28 +340,32 @@ public class AccountDAO {
 			
 				StringBuilder sql = new StringBuilder();
 	
-				sql.append(" select accountno from t_account@sj_bank_link ");
-				sql.append(" where banking_id = ? ");
+		//		sql.append(" select accountno from t_account@sj_bank_link ");
+		//		sql.append(" where banking_id = ? ");
 				
 			//	System.out.println(sql);
 				
+				sql.append("select t.accountno as accountNo, t.alias as account_nickname, t.balance as balance, t.reg_date as openDate "
+			               + " from banking_login@sj_bank_link b , t_account@sj_bank_link t  "
+			               + " where b.banking_id = t.banking_id and b.phone_no = ? order by openDate ");
+//			         
+			         
 				try(
 						Connection conn = new ConnectionFactory().getConnection();
 						PreparedStatement pstmt = conn.prepareStatement(sql.toString());
 					) {
-						pstmt.setString(1, "yryr");
+					//	pstmt.setString(1, "01047520453  ");
+						
+						pstmt.setString(1, userTel + "  ");
 						ResultSet rs = pstmt.executeQuery();
 						
 						while(rs.next()) {
-					//		System.out.println("dDD");
-							
-							//타행계좌
 							AccountVO account = new AccountVO();
-							account.setAccountNo(rs.getString("accountno"));
-							/*
-							 * account.setAccountNickName(rs.getString("alias"));
-							 * account.setBalance(rs.getInt("balance"));
-							 */
+							
+							account.setAccountNo(rs.getString("accountNo"));
+							account.setAccountNickName(rs.getString("account_nickname"));
+							account.setBalance(rs.getInt("balance"));
+							
 							SJBankAccList.add(account);
 							System.out.println(SJBankAccList);
 						}
@@ -425,9 +429,9 @@ public List<TransactionHistoryVO> selectOpenBankTransHistory(String bankCode, St
 		
 		Map<String, String> sqlMap = new HashMap<>();
 
-		String JHBankSQL = "select to_char(transDate, 'mm/dd hh:mi') as trans_date, mydesc as others_name, amount as trans_money, balance from t_statement@jh_bank_link where accountNo = ? ";
-		String SWBankSQL = "select to_char(tran_date, 'mm/dd hh:mi') as trans_date, tran_type as others_name, tran_amount as trans_money, tran_mybalance as balance from transaction_history@sw_bank_link where tran_myaccount = ? ";
-		String SJBankSQL = "select to_char(trans_date, 'mm/dd hh:mi') as trans_date, to_name as others_name, amount as trans_money, my_balance as balance from transaction_details@sj_bank_link where my_account_no = ? ";
+		String JHBankSQL = "select to_char(transDate, 'mm/dd hh:mi') as trans_date, mydesc as others_name, amount as trans_money, balance from t_statement@jh_bank_link where accountNo = ? order by trans_date desc ";
+		String SWBankSQL = "select to_char(tran_date, 'mm/dd hh:mi') as trans_date, tran_type as others_name, tran_amount as trans_money, tran_mybalance as balance from transaction_history@sw_bank_link where tran_myaccount = ? order by trans_date desc ";
+		String SJBankSQL = "select to_char(trans_date, 'mm/dd hh:mi') as trans_date, to_name as others_name, amount as trans_money, my_balance as balance from transaction_details@sj_bank_link where my_account_no = ? order by trans_date desc ";
 		
 		sqlMap.put("111", JHBankSQL);
 		sqlMap.put("032", SWBankSQL);

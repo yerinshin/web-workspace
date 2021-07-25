@@ -54,7 +54,7 @@
 	}
 	
 	#nickname {
-
+		color : black;
 		/* text-align : left; */
 		font-size : 24px;
 		font-weight : bold;
@@ -70,6 +70,16 @@
 		font-size : 26px;
 	}
 	
+	h2 {
+	
+		font-size :30px;
+	}
+	
+	.logo-img {
+		margin-left : 20px;
+		margin-right : 10px;
+		margin-bottom : 20px;
+	}
 </style>
 <script>
 	function goAccountDetail(accountNo) {
@@ -131,14 +141,17 @@
            <div class="container accountList">
          
            <c:if test="${ not empty JHAccountList }">
+           <div class="row">
+           <img class= "logo-img" src="<%= request.getContextPath() %>/resources/images/jh-logo.png">
            <h2>[ JH Bank ]</h2>
+           </div>
             <div class="row">
 			<c:forEach items="${ JHAccountList }" var="account" varStatus="loop">	
                <div class="col-md-6">
-                  <div class="service-box account-box">
-                  <a id="nickname" href="<%= request.getContextPath() %>/account/accountDetail.do?accountNo=${account.accountNo}"> 
+                  <div class="service-box account-box" onclick="goAccountDetail('${account.accountNo}')">
+                  <div id="nickname"> 
                      ${ account.accountNickName }
-                  </a>
+                  </div>
                      <h4 id="accountNo">${ account.accountNo }</h4>
                      <h1 id="balance"> ${ account.balance }원</h1>
                     <div class="row">
@@ -154,14 +167,17 @@
             <c:if test="${ not empty SWAccountList }">
             <hr>
             <br>
+             <div class="row">
+           <img class= "logo-img" src="<%= request.getContextPath() %>/resources/images/sw-logo.png">
             <h2> [ SW Bank ] </h2>
+            </div>
             <div class="row">
 	            <c:forEach items="${ SWAccountList }" var="account" varStatus="loop">	
 	               <div class="col-md-6">
-	                  <div class="service-box account-box">
-	                  <a id="nickname" href="<%= request.getContextPath() %>/account/accountDetail.do?accountNo=${account.accountNo}"> 
-	                     ${ account.accountNickName }
-	                  </a>
+	                  <div class="service-box account-box" onclick="goAccountDetail('${account.accountNo}')">
+	                  <div id="nickname"> 
+                     	${ account.accountNickName }
+                 	  </div>
 	                     <h4 id="accountNo">${ account.accountNo }</h4>
 	                     <h1 id="balance"> ${ account.balance }원</h1>
 	                    <div class="row">
@@ -176,14 +192,17 @@
             
             <c:if test="${ not empty SJAccountList }">
             <hr>
+            <div class="row">
+           <img class= "logo-img" src="<%= request.getContextPath() %>/resources/images/sj-logo.png">
            <h2>[ SJ Bank ] </h2>
+           </div>
             <div class="row">
 	            <c:forEach items="${ SJAccountList }" var="account" varStatus="loop">	
 	               <div class="col-md-6">
-	                  <div class="service-box account-box">
-	                  <a id="nickname" href="<%= request.getContextPath() %>/account/accountDetail.do?accountNo=${account.accountNo}"> 
-	                     ${ account.accountNickName }
-	                  </a>
+	                  <div class="service-box account-box" onclick="goAccountDetail('${account.accountNo}')">
+	                	 <div id="nickname"> 
+                   		 	 ${ account.accountNickName }
+                 		 </div>
 	                     <h4 id="accountNo">${ account.accountNo }</h4>
 	                     <h1 id="balance"> ${ account.balance }원</h1>
 	                    <div class="row">

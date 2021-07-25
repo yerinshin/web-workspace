@@ -29,8 +29,7 @@
    	}
    	
     #th-tag {
-  /*   background-color:#dee2e6; */
- /*  background-color : rgb(255,204,051,0.5); */
+
 	 background-color : rgb(204,204,204,0.2); 
 	
     }
@@ -60,6 +59,12 @@ $(document).ready(function(){
 	$('#deleteBtn').click(function(){
 		boardNo = ${ board.no }
 		location.href = "<%= request.getContextPath() %>/board/boardDelete.do?no="+boardNo
+	})
+	
+	$('#goReplyBtn').click(function(){
+		
+		boardNo = ${ board.no }
+		location.href= "<%= request.getContextPath() %>/board/boardReply.do?no="+boardNo
 	})
 })
 
@@ -119,42 +124,14 @@ $(document).ready(function(){
                            			<th id="th-tag" >내용</th>
                            			<td colspan="5" id="td-tag">${ board.content }</td>
                            		</tr>
-                           		<%-- <tr>
-                           			<th class="table-light">조회수</th>
-                           			<td>${ board.viewCnt }</td>
-                           		</tr> --%>
-                           		<%-- <tr>
-                           			<th class="table-light">등록일</th>
-									<td colspan="5">${ board.regDate }</td>
-                           		</tr> --%>
+
                            </table>
                            <button class="send" id="updateBtn" >수정</button>
 							<button class="send" id="deleteBtn">삭제</button>
+							
 							<button class="send" id="goListBtn">목록</button>
-                           
-<%--                            <div class="container col-md-12">
-    <div class="card">
-        <div class="card-body">
-            <h1 class="card-title mb-3">${ board.title }</h1>
-            <h2 class="text-muted mb-4">
-                <i class="far fa-user"></i> ${ board.writer }
-                ·
-                <i class="far fa-clock"></i>${ board.regDate }
-                ·
-                <i class="fas fa-align-justify"></i>${ board.viewCnt }
-            </h2>
-            <h2> class="card-text">${board.content }</h2>
-        </div>
-        <div class="card-body">
-            <a href="#" class="btn btn-outline-secondary btn-sm" role="button">수정</a>
-            <a href="#" class="btn btn-outline-secondary btn-sm " role="button">삭제</a>
-        </div>
-        <div class="card-body">
-            <a href='<c:url value='/board/boardList'/>' class="btn btn-info" role="button">목록으로</a>
-        </div>
-    </div>
-</div>
- --%>
+							<button class="send" id="goReplyBtn"">답글</button>
+							
 
                    
                 </div>

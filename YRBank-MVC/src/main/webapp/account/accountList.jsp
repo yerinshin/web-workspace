@@ -59,7 +59,7 @@
 	}
 	
 	#nickname {
-
+		color : black;
 		/* text-align : left; */
 		font-size : 24px;
 		font-weight : bold;
@@ -82,6 +82,14 @@
 		
 	}
 
+</script>
+<script>
+$(document).ready(function(){
+	$('#add-account-btn').click(function(){
+		alert(dd)
+		location.href = "<%= request.getContextPath() %>/account/accountOpen.do"
+	})
+})
 </script>
 </head>
  <!-- body -->
@@ -144,9 +152,9 @@
 			<c:forEach items="${ accountList }" var="account" varStatus="loop">	
                <div class="col-md-6">
                   <div class="service-box account-box" onclick="goAccountDetail('${account.accountNo}')">
-                  <a id="nickname" href="<%= request.getContextPath() %>/account/accountDetail.do?accountNo=${account.accountNo}"> 
+                  <div id="nickname"> 
                      ${ account.accountNickName }
-                  </a>
+                  </div>
                      <h4 id="accountNo">${ account.accountNo }</h4>
                      <h1 id="balance"> ${ account.balance }원</h1>
                     <div class="row">
@@ -161,8 +169,8 @@
                <div class="col-md-6">
                   <div class="service-box account-add-box">
                   <i><img src="/YRBank-MVC/resources/icon/service2.png"></i>
-                     <button id="btn-read-more" class="col-md-5 read-more">계좌 추가 개설하기</button>
-                  	</div>
+                     <button id="btn-read-more add-account-btn" class="col-md-5 read-more">계좌 추가 개설하기</button>
+                  	</div> 
                   </div>
                </div>
             

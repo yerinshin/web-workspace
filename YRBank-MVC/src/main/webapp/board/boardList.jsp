@@ -9,14 +9,25 @@
 <style>
 	
      table {
-    	font-size : 20px;
+    	font-size : 23px;
     	border : 2px;
      }
      		
      th, td {
      	text-align : center;
      }
-    		
+     
+     
+     
+     td#title {
+     	padding-left : 40px;
+     	text-align : left;
+     }
+	
+	#re{
+		color:#d74351;
+		margin-right:5px;
+	}
     .list-table {
     	margin-top : 100px;
     }
@@ -92,11 +103,24 @@
 				   <c:forEach items="${ boardList }" var="board" varStatus="loop">	
 	
 					<tr>
-						<td>${ board.no }</td>
-						<td>
+						<td>${ board.rowNum }</td>
+						<td id="title" class="row">
+						
+							<c:if test= "${ board.level gt 1 }">
+							<c:forEach begin="1" end="${ board.level }">
+									&nbsp;&nbsp;	<!-- 답변글일경우 글 제목앞에 공백을 준다. -->
+							</c:forEach>
+							
+							<div id="re">
+									└ RE :
+							</div>
+							</c:if>
+						
+						
 						<%-- 	<a href="<%= request.getContextPath() %>/board/detail.do?no=${ board.no }"> 
 							<a href="#" onclick="doAction()"> --%>
 							<a href="javascript:doAction(${ board.no }, ${ board.viewCnt })">  <%-- href로 경로 이동하지 않고, 자바스크립트의 문법 실행 --%>
+								
 								<c:out value="${ board.title }" /> 
 							</a>
 						</td>

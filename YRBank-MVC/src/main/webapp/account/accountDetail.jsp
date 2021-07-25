@@ -57,7 +57,7 @@
 	}
 	
 	table {
-		font-size : 20px;
+		font-size : 22px;
 	}
 	
 	#trans-info-col {
