@@ -15,17 +15,20 @@ public class AccountTransferProcessController implements Controller {
 		
 		HttpSession session = request.getSession();
 		TransferInfoVO transInfo = (TransferInfoVO)session.getAttribute("transInfo");
+		request.setAttribute("transInfo", transInfo);
 		session.removeAttribute("transInfo");
 		
 		
 		AccountDAO dao = new AccountDAO();
 		int result = dao.accountTransfer(transInfo);
 		
+		String uri = "";
 		if(result == 3) {
 			System.out.println(result);
+			uri="/account/transferSuccess.jsp";
 		}
 		
-		return "redirect:/account/accountList.do";
+		return uri;
 	}
 
 }

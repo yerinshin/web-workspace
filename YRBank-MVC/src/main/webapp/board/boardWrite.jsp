@@ -26,11 +26,28 @@
      	
      	.send {
      		margin-top : 20px;
+     		
      	}
      	
      	.c-out {
      		padding-left : 10px;
      		margin-bottom : 15px;
+     	}
+     	
+     	#goBoardListBtn {
+     		margin-left : 230px;
+     	}
+     	
+     	#writeBoardBtn {
+     		margin-right : 200px;
+     	}
+     	
+     	.button input {
+     		border-radius : 12px;
+     	}
+     	
+     	footer {
+     	margin-top : 100px;
      	}
    
      </style>
@@ -118,12 +135,16 @@
 						</tr>
 
 					</table>
+			
+				<div class="col-md-12">
 				<div class="row button">
-				<div class="col-md-2">
-				</div>
+				
+				
 		            <input class="send" type="button" value="목록" id="goBoardListBtn">
-		        	<input class="send" type="submit" value="등록">
-          		</div>
+		        	<input class="send" type="submit" value="등록" id="writeBoardBtn">
+				</div>
+				</div>
+          			
                     </form>
                 </div>
             </div>

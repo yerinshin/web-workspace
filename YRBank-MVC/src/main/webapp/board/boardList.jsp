@@ -20,21 +20,34 @@
      
      
      td#title {
-     	padding-left : 40px;
+     	padding-left : 50px;
      	text-align : left;
      }
 	
 	#re{
-		color:#d74351;
-		margin-right:5px;
+	/* 	color:#d74351; */
+		margin-right:10px;
 	}
     .list-table {
     	margin-top : 100px;
     }
     
     .add-btn {
-    	margin : 30px 0px 30px 0px;
+    	margin : 50px 0px 30px 0px;
     
+    }
+    
+    button {
+    	border-radius : 12px;
+    }
+    
+     .send {
+     	max-width : 400px;
+     	margin-top : 80px;
+     }
+    
+    footer {
+    	margin-top: 100px;
     }
 </style>
 <script>
@@ -112,7 +125,7 @@
 							</c:forEach>
 							
 							<div id="re">
-									└ RE :
+									└<img src="<%= request.getContextPath() %>/resources/images/reply-img.png" /> 
 							</div>
 							</c:if>
 						

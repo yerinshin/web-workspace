@@ -27,6 +27,10 @@
     input.form-control {
      	margin-top : 20px;
      }
+     
+      #content {
+    	height : 400px;
+    }
      	
      .send {
      	margin-top : 20px;
@@ -113,7 +117,7 @@
 						</div>
 							</td>
 						</tr>
-						<tr>
+						<tr id="content">
 							<th>내용</th>
 							<td>
 								<textarea class="textarea" rows="10" cols="60" name="content">${ board.content }</textarea>

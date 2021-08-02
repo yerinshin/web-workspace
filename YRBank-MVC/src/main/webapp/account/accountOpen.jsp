@@ -27,13 +27,19 @@
      }
      		
      .send {
-     	margin-top : 20px;
+     max-width : 400px;
+     	margin-top : 50px;
      }
      
      .c-out {
      		padding-left : 10px;
      		margin-bottom : 15px;
      		height: 80px;
+     	}
+     	
+     	footer {
+    
+     		margin-top : 100px;
      	}
 </style>
 
@@ -134,7 +140,7 @@
                            			<td>
                            			<div class="row">
                            				<div class="col-md-12">
-                           					<c:out value="${ loginMember.ss1 }" />
+                           					<c:out value="${ loginMember.ss1 }" /> -<c:out value="${ sex }xxxxxx"></c:out>
                            				</div>
                            			</div>
                            			</td>
@@ -168,7 +174,7 @@
                            	
                            </table>
                           
-                            <div class=" col-md-12">
+                            <div class=" col-md-12 openAcc-btn">
                                 <button type="submit" class="send">계좌개설하기</button>
                             </div>
                         

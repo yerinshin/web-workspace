@@ -5,6 +5,8 @@
 <head>	
  	<jsp:include page="/include/head.jsp"></jsp:include>
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+
 <style>
 	div.nice-select{
 		display : none;
@@ -56,7 +58,7 @@
      }
      
      h2{
-     	font-size : 30px;
+     	font-size : 40px;
      	font-weight : bold;
      }
      h4 {
@@ -69,15 +71,48 @@
      
      #transfer-btn {
      	font-size : 25px;
+     	max-width : 450px;
      
      }
 </style>
 <script>
 	$(document).ready(function(){
 		$('#transfer-btn').click(function(){
-			location.href='<%= request.getContextPath()%>/account/accountTransferProcess.do'
+			location.href='<%= request.getContextPath()%>/account/accountList.do'
 		})
 	})
+</script>
+<script type="text/JavaScript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+
+<script>
+try {
+  function sendLinkDefault() {
+    Kakao.init('992a4f6229c471e14baf1883c1918b4a')
+    Kakao.Link.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '${ loginMember.name } 님로부터의 이체',
+        description: '${ transInfo.otherAccOwner }님의 ${ transInfo.othersBankName }계좌에 ${ transInfo.transMoney }원 송금되었습니다.',
+        imageUrl:
+            '<%= request.getContextPath()%>/resources/images/kakao-message-img.JPG',
+        link: {
+          mobileWebUrl: 'https://developers.kakao.com',
+          webUrl: 'https://developers.kakao.com',
+        },
+      },
+      buttons: [
+        {
+          title: '이체 상세 확인',
+          link: {
+            mobileWebUrl: 'https://developers.kakao.com',
+            webUrl: 'https://developers.kakao.com',
+          },
+        },
+      ],
+    })
+  }
+; window.kakaoDemoCallback && window.kakaoDemoCallback() }
+catch(e) { window.kakaoDemoException && window.kakaoDemoException(e) }
 </script>
 </head>
  <!-- body -->
@@ -103,7 +138,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="titlepage">
-                        <h2>계좌정보확인</h2>
+                        <h2>계좌이체</h2>
                     </div>
                 </div>
             </div>
@@ -122,20 +157,21 @@
 <div class="choose_bg">
          <div class="container">
             <div class="white_bg" id="accountCheck">
-           		<h2>[받는이]</h2>
+           		
+           		<h2> v 이체 완료 </h2>
+      
            		<br>
-  	    	<h4>은행명 : ${ transInfo.othersBankName }</h4>
-      			<h4>예금주 : ${ transInfo.otherAccOwner }</h4>
-      			<h4>받는이 계좌 : ${ transInfo.othersAccNo }</h4>
-      			<h4>이체할금액 : ${ transInfo.transMoney }원</h4> 
-      			
+      
+       			<h4>${ transInfo.otherAccOwner } 님의</h4>
+      			<h4>${ transInfo.othersBankName } ${ transInfo.othersAccNo } 계좌에</h4>
+      			<h4>${ transInfo.transMoney }원 이체완료</h4>
       			<br><br>
-           		<h2>[보내는이]</h2>
-           		<br>
-           		<h4>예금주 : ${ loginMember.name }</h4> 
-           		<h4>출금계좌 : ${ transInfo.myAccNo }</h4>
+          
       			     <br>
-      			      <button class="send" id="transfer-btn"><strong>이체</strong></button>  
+      			     <div class="row">
+      			      <button class="send" id="transfer-btn"><strong>확인</strong></button>  
+      			      <button class="send" id="transfer-btn" onclick="sendLinkDefault();" value="Default"><strong>메세지보내기</strong></button>  
+      			     </div>
         		 </div>
      		  </div>
       		</div>

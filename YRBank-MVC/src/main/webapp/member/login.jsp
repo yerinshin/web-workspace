@@ -6,10 +6,48 @@
    		<style>
    			form div {
    				margin : 0px auto;
+   				
    			}
    			
-   			.login-btn {
-   				margin : 0px auto;
+   			
+   			
+   			 
+   			.login-btn button {
+   			
+   				border-radius: 12px;
+   				max-width : 666px;
+   				margin-top : 30px;
+   			}
+   			
+   			.signup-btn button {
+   			
+   				border-radius: 12px;
+   				max-width : 666px;
+   				margin-top : 15px;
+   			}
+   			
+   			.signup-btn .read-more {
+   				border-radius: 12px;
+   				width : 640px;
+   				height : 54px;
+   				margin-top : 15px;
+   			}
+   			
+   			.signUpLink {
+   				margin-top: 30px;
+   				margin-left : 40px;
+   				margin-right : 20px;
+   				font-size : 22px;
+   			}
+   			
+   			.kakao-login-btn {
+   				margin-left : 30px;
+   				margin-top: 15px;
+   				height : 55px;
+   			}
+   			
+   			footer {
+   				margin-top : 100px;
    			}
    		</style>
    
@@ -81,7 +119,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="titlepage">
-                        <h2>로그인</h2>
+                        <h2>Login</h2>
                     </div>
                 </div>
             </div>
@@ -102,11 +140,19 @@
             			<div class=" col-md-8">
             				<input class="form-control" placeholder="비밀번호" type="password" name="password">
                         </div>
-                        <div class=" col-md-8">
-                         <div class="row login-btn">
-                             <a href="javascript:kakaoLogin()"><img src="<%=request.getContextPath() %>/resources/images/kakao-btn.JPG" width="350px"></a>
+                        
+                        <div class="col-md-8 login-btn">
                              <button type="submit" class="send">로그인</button>
                         </div>
+                     <!--     <div class=" col-md-8 signup-btn">
+                        <button class="send" >회원가입</button>
+                        </div> -->
+                      <div class="col-md-8">
+                   
+                      		<a class="signUpLink" href="<%= request.getContextPath()%>/member/signUp.do"> <u>create an account</u> </a>
+                     
+                
+                         <a href="javascript:kakaoLogin()"><img src="<%=request.getContextPath() %>/resources/images/kakao_login_btn.png" class="kakao-login-btn" width="330px"></a>
                         </div>
                         
                     </form>

@@ -6,6 +6,90 @@
 <head>	
  	<jsp:include page="/include/head.jsp"></jsp:include>
 <!--  	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> -->
+
+<style>
+		.button input {		
+   		 	margin-top : 30px;
+   			border-radius : 12px;
+   		}
+   			
+     	table {
+     		font-size : 17px;
+     	}
+     		
+     	th {
+     		text-align : center;
+     		width : 30%;
+     	}
+    		
+    	input.form-control {
+     		margin-top : 20px;
+     	}
+     	
+     	.send {
+     		margin-top : 20px;
+     		
+     	
+     	}
+     	
+     	
+     	
+     	.c-out {
+     		padding-left : 10px;
+     		margin-bottom : 15px;
+     	}
+     	
+     	#goBoardListBtn {
+     		margin-left : 230px;
+     	}
+     	
+     	#writeBoardBtn {
+     		margin-right : 200px;
+     	}
+     	
+     	.btn {
+     	
+     	}
+     	
+     	footer {
+     	margin-top : 100px;
+     	}
+   
+</style>
+<script>
+
+	if('${ loginMember }' == '') {
+		location.href="<%= request.getContextPath()%>/member/login.jsp"
+	}
+		
+	$(document).ready(function() {
+		$('#goBoardListBtn').click(function() {
+			location.href = "<%= request.getContextPath()%>/board/boardList.do"
+		})
+	})
+	
+	function doWrite()	{
+		
+		let f = document.writeForm
+		
+		if(f.title.value == '') {
+			alert('제목을 입력하세요')
+			f.title.focus()
+			return false
+		}
+		
+		if(f.content.value == '') {
+			alert('내용을 입력하세요')
+			f.content.focus()
+			return false
+		}
+
+
+		return true
+	}
+	
+
+</script>
 </head>
  <!-- body -->
 <body class="main-layout">
@@ -60,7 +144,7 @@
 						</div>
 							</td>
 						</tr>
-						<tr>
+						<tr id="content">
 							<th>내용</th>
 							<td>
 								<textarea class="textarea" rows="10" cols="60" name="content"></textarea>
@@ -68,12 +152,14 @@
 						</tr>
 
 					</table>
+				<div class="col-md-12">
 				<div class="row button">
-				<div class="col-md-2">
-				</div>
+				
+				
 		            <input class="send" type="button" value="목록" id="goBoardListBtn">
-		        	<input class="send" type="submit" value="등록">
-          		</div>
+		        	<input class="send" type="submit" value="등록" id="writeBoardBtn">
+				</div>
+				</div>
                     </form>
                 </div>
             </div>

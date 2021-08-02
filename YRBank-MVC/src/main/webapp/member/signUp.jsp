@@ -6,7 +6,7 @@
    <head>
    		
    		<jsp:include page="/include/head.jsp"></jsp:include>
-   	
+   	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
    	
      	<style>
      		table {
@@ -51,6 +51,124 @@
 	     		  
 	    
      	</script>
+<script>	
+	 function doWrite(){
+		
+		let f = document.signUpForm
+		if(f.id.value == '') {
+			alert('아이디를 입력하세요')
+			f.id.focus()
+			return false
+		}
+		
+		if(f.password1.value == '') {
+			alert('비밀번호를 입력하세요')
+			f.pwd.focus()
+			return false
+		}
+		
+		if(f.password2.value == '') {
+			alert('재확인 비밀번호를 입력하세요')
+			f.pwd2.focus()
+			return false
+		}
+		
+		if(f.name.value == '') {
+			alert('이름을 입력하세요')
+			f.name.focus()
+			return false
+		}
+		
+		if(f.ss1.value == '') {
+			alert('주민등록번호를 입력하세요')
+			f.birth.focus()
+			return false
+		}
+		if(f.ss2.value == '') {
+			alert('주민등록번호를 입력하세요')
+			f.birth.focus()
+			return false
+		}
+		 
+		 if(f.email.value == '') {
+				alert('이메일을 입력하세요')
+				f.gender.focus()
+				return false
+			}
+		
+		 
+		if(f.tel.value == '') {
+			alert('전화번호를 입력하세요')
+			f.phone.focus()
+			return false
+		}
+		
+		return true
+	} 
+	
+ 	$(document).ready(function(){
+		
+  		$('#pwd-success').hide()
+		$('#pwd-fail').hide() 
+		 
+		$('#password2').on("propertychange change keyup paste input",
+        	function() {
+				let val = $(this).val()
+				if(val == $('#password1').val()) {
+					$('#pwd-success').show()
+					$('#pwd-fail').hide()
+					$('#btnJoin').attr('disabled', false)
+				} else {
+					$('#pwd-success').hide()
+					$('#pwd-fail').show()
+					$('#btnJoin').attr('disabled', true)
+				}
+				if(val == '') {
+					$('#pwd-success').hide()
+					$('#pwd-fail').hide()
+					$('#btnJoin').attr('disabled', true)
+				}
+		
+			})
+		
+	})	
+	
+
+$(document).ready(function(){
+		$("#id").keyup(function() {
+		  		var user_id = $('#id').val();
+		  		var pattern1 = /^[a-z]+[a-z0-9]{5,19}$/g ;
+		  		
+		  		if (pattern1.test(user_id)){//정규식이 통과한 경우
+		  			$.ajax({
+				  			url : '${pageContext.request.contextPath}/member/index/checkMember.do',
+				  			type : 'get',
+				  			dataType: "json",
+				  			data : {"id" :user_id},
+				  			success : function(data){
+				  				
+				  				if(data == 1) {
+				  				$('#check_id').text("사용 중인 아이디 입니다.");
+		  						$('#submit').attr("disabled", "disabled");		
+				  				} else {
+				  						$('#check_id').text("사용가능한 아이디 입니다.");
+				  						$("#btnJoin").removeAttr("disabled");		  				
+				  				}
+				  			}, error : function(){
+				  			}
+				  		});
+		  		}else if (user_id ==""){
+		  			$('#check_id').text("아이디를 입력해 주세요");
+					$('#btnJoin').attr("disabled", "disabled");	
+		  		} 	else {
+		  			$('#check_id').text("형식에 맞지 않는 번호입니다.");
+					$('#btnJoin').attr("disabled", "disabled");	
+		  			//정규식 통과에 실패한 경우
+		  		}
+		});
+});
+
+</script>
      	
    </head>
    <!-- body -->
@@ -85,7 +203,7 @@
           
                 <div class="col-md-12">
 
-                    <form class="main_form" action="<%= request.getContextPath()%>/member/signUpProcess.do" method="post">
+                    <form class="main_form" action="<%= request.getContextPath()%>/member/signUpProcess.do" name="signUpForm" method="post">
 
                         
                          <!-- 아이디, 비번, 이름, 주민등록번호, email, tel -->
@@ -115,11 +233,15 @@
                            		</tr>
                            		<tr>
                            			<th>비밀번호</th>
-                           			<td>  <input class="form-control" placeholder="비밀번호" type="password" name="password1"></td>
+                           			<td>  <input class="form-control" placeholder="비밀번호" type="password" name="password1" id="password1"></td>
                            		</tr>	
                            		<tr>
                            			<th>비밀번호 재확인</th>
-                           			<td>  <input class="form-control" placeholder="비밀번호 재확인" type="password" name="password2"></td>
+                           			<td>  <span><input class="form-control" placeholder="비밀번호 재확인" type="password" name="password2" id="password2"></span>
+                           			  <span id="pwd-success" style="color:blue;">비밀번호가 일치합니다.</span>
+									  <span id="pwd-fail" style="color: #d92742; font-weight: bold; ">비밀번호가 일치하지 않습니다.</span>
+									  </td>
+                           			
                            		</tr>
                            		<tr>
                            			<th>이름</th>
@@ -159,7 +281,7 @@
                            </table>
                           
                             <div class=" col-md-12">
-                                <button type="submit" class="send">회원가입</button>
+                                <button type="submit" class="send" id="btnJoin">회원가입</button>
                             </div>
                         
                     </form>

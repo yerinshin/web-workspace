@@ -26,6 +26,13 @@
     
     button {
    		margin : 0px auto;
+   		border-radius : 12px;
+   	}
+   	
+
+   	
+   	.send {
+   		margin-top: 40px;
    	}
    	
     #th-tag {
@@ -37,6 +44,11 @@
     #td-tag {
     	color : black;
     }
+    
+    #content {
+    	height : 400px;
+    }
+    
 </style>
 
 <script>
@@ -120,17 +132,19 @@ $(document).ready(function(){
                            			<th id="th-tag">작성자</th>
                            			<td colspan="5" id="td-tag">${ board.writer }</td>
                            		</tr> 
-                           		<tr>
+                           		<tr id="content">
                            			<th id="th-tag" >내용</th>
                            			<td colspan="5" id="td-tag">${ board.content }</td>
                            		</tr>
 
                            </table>
-                           <button class="send" id="updateBtn" >수정</button>
-							<button class="send" id="deleteBtn">삭제</button>
+                           <div class="row send-btn"> 
+							<button class="read-more" id="goListBtn">목록</button>
+                           <button class="read-more" id="updateBtn" >수정</button>
+							<button class="read-more" id="deleteBtn">삭제</button>
 							
-							<button class="send" id="goListBtn">목록</button>
-							<button class="send" id="goReplyBtn"">답글</button>
+							<button class="send" id="goReplyBtn">답글</button>
+                           </div>
 							
 
                    
